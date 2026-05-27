@@ -1,0 +1,15 @@
+# Alex Neill
+
+> Senior Software Engineer - Ruby on Rails, Go, and ad-tech platforms. Remote-first since 2012.
+
+## Curriculum vitae
+
+- [CV (Markdown)](https://ajneill.dev/cv.md): Canonical work history, skills, and project detail for agents and humans.
+- [CV (HTML)](https://ajneill.dev/): Interactive infographic résumé (print-ready).
+
+## Contact
+
+- Location: Kettering, UK
+- Email: hireme@ajneill.dev
+- GitHub: https://github.com/ajn
+- Site: https://ajneill.dev/
