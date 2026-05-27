@@ -97,7 +97,7 @@ Most recently, we worked with VidMob integrating with their Ad partner platforms
 
 A side project brought about by a local rehearsal studio not having a booking system, I reached out to the then owner Josh and I started building Rehearse around his needs.
 
-11+ years and 2 owners later, Rehearse is still going strong and now has [Rehearse Pay](https://apps.apple.com/us/app/rehearse-pay/id1612656608), an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.
+11+ years and 2 owners later, Rehearse is still going strong and now has [Rehearse Pay](https://apps.apple.com/gb/app/rehearse-pay/id1612656608), an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.
 
 The main website has built up a lot of features over the years including complex timeslots, restrictions and availability. There's extensive SQL for converting these into a time series for use in the booking grid. An example account is available at [https://test-flight.rehearsal.studio/](https://test-flight.rehearsal.studio/)
 
