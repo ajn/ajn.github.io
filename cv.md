@@ -61,6 +61,9 @@ Happity is a platform connecting parents with baby and toddler classes across th
 
 Led end-to-end delivery of multiple features on the Ruby on Rails platform, including an embeddable third-party booking widget, a provider onboarding pre-approval system, and a promoted listings advertising product. Overhauled newsletter infrastructure, introduced a BigQuery analytics pipeline, and significantly improved platform performance and observability.
 
+Intergrated Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.
+Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automates the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.
+
 Day-to-day this meant touching everything from database design and background jobs through to frontend interactions and third-party integrations, working closely with a small team to ship features to a tight product roadmap.
 
 **Technologies/Languages:** Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash
