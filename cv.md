@@ -31,24 +31,27 @@ Innovate solutions for old problems to **stay relevant** and competitive.
 **Experience** in a range of web and development technologies.
 A **pragmatic, creative** mind that can solve problems.
 Personable with an **ever-helpful demeanour**.
-**10+ years** of **remote-first collaboration** (since 2012).
+**14+ years** of **remote-first collaboration** (since 2012).
 Proficient **bilingual writer** (British and American English).
 
 **Current Technologies (Last 6m)**
 
-**Ruby**: Rails 8
-**Swift**: Hotwire Native
-**Go**: Protocol Buffers / gRPC
-**Python**: Databricks
-**TypeScript/JavaScript**: Stimulus, Alpine.js, Vue
-**Formats:** HTML, JSON, XML, YAML
-**CSS**: Tailwind CSS, Bootstrap
-**SQL**: PostgreSQL / SQLite
-**Testing**: RSpec, Capybara, Shoulda, Mocha
-**Git**: GitHub / GitLab
-**Unix/Linux**: macOS, Ubuntu, Alpine
-**DevOps:** Docker, Kamal 2, AWS, Kubernetes
-**CI:** GitHub Actions, GitLab CI
+**Ruby:** Rails 7 (Happity), Rails 8 (Rehearse.app)
+**Swift:** Hotwire Native, SumUp SDK
+**JavaScript:** Stimulus, Alpine.js, Turbo
+**Formats:** HTML, JSON, YAML
+**CSS:** SCSS, Bootstrap, Tailwind CSS
+**SQL:** PostgreSQL / SQLite
+**Background jobs:** Sidekiq
+**Cache:** Redis
+**Analytics:** BigQuery
+**Payments:** Stripe
+**Testing:** RSpec, Capybara
+**AI:** Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI
+**Git:** GitHub
+**Platform:** macOS
+**DevOps:** Docker
+**CI:** GitHub Actions, Jira (PR workflows)
 
 **Experience**
 
@@ -61,13 +64,14 @@ Happity is a platform connecting parents with baby and toddler classes across th
 
 Led end-to-end delivery of multiple features on the Ruby on Rails platform, including an embeddable third-party booking widget, a provider onboarding pre-approval system, and a promoted listings advertising product. Overhauled newsletter infrastructure, introduced a BigQuery analytics pipeline, and significantly improved platform performance and observability.
 
-Intergrated Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.
-Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automates the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.
+Used Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.
+Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automate the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.
 
 Day-to-day this meant touching everything from database design and background jobs through to frontend interactions and third-party integrations, working closely with a small team to ship features to a tight product roadmap.
 
 **Technologies/Languages:** Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash
-**Frameworks/Libraries:** Ruby on Rails, Turbo, Stimulus, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery
+**Frameworks/Libraries:** Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery
+**Tools:** Claude Code, GitHub Actions, Jira
 
 **Company:** Black Square Media (https://blacksquaremedia.com)
 **Dates:** February 2012 - May 2025
@@ -102,10 +106,13 @@ A side project brought about by a local rehearsal studio not having a booking sy
 
 11+ years and 2 owners later, Rehearse is still going strong and now has [Rehearse Pay](https://apps.apple.com/gb/app/rehearse-pay/id1612656608), an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.
 
+In the last six months I upgraded Rehearse to Rails 8 with ongoing feature work; Cursor is my day-to-day coding environment for the project.
+
 The main website has built up a lot of features over the years including complex timeslots, restrictions and availability. There's extensive SQL for converting these into a time series for use in the booking grid. An example account is available at [https://test-flight.rehearsal.studio/](https://test-flight.rehearsal.studio/)
 
 **Technologies/Languages:** Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift
-**Frameworks/Libraries:** Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec
+**Frameworks/Libraries:** Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec
+**Tools:** Cursor
 
 **Company:** Driver First Assist (side project)
 **Dates:** Mid 2018 - Current
@@ -118,10 +125,13 @@ The project consists of a manager which has a section for Trainers to see their 
 
 Instead of manually ordering a toolkit for each member, the site allows for members to select their size and enter their postal address and it will use Mechanize to automatically log in, select a toolkit size, enter their address and submit the order.
 
-The customer-facing documentation is something I’m very proud of. I piggybacked the system tests, adding JavaScript helpers and using CSS to highlight areas of the screen, then automatically took screenshots after each successful test, combining these images in markdown. This was then processed into HTML with the generated images being cropped, using imagemagick, so only the highlighted areas are included in the documentation. This all happened post successful test time, so new documentation is available after each feature is added - a public-accessible section can be seen here: [https://secure.driverfirstassist.org/help/clients/courses.html](https://secure.driverfirstassist.org/help/clients/courses.html)
+The customer-facing documentation is something I'm very proud of. I piggybacked the system tests, adding JavaScript helpers and using CSS to highlight areas of the screen, then automatically took screenshots after each successful test, combining these images in markdown. This was then processed into HTML with the generated images being cropped, using imagemagick, so only the highlighted areas are included in the documentation. This all happened post successful test time, so new documentation is available after each feature is added - a public-accessible section can be seen here: [https://secure.driverfirstassist.org/help/clients/courses.html](https://secure.driverfirstassist.org/help/clients/courses.html)
+
+This approach has since been extracted into [dry-doc](https://github.com/ajn/dry-doc) (Don't Repeat Yourself Documentation) gems.
 
 **Technologies/Languages:** Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com
 **Frameworks/Libraries:** Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize
+**Tools:** [dry-doc](https://github.com/ajn/dry-doc)
 
 **Company:** Northamptonshire Healthcare NHS Foundation Trust (side project)
 **Dates:** Mid - Late 2020

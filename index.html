@@ -264,8 +264,88 @@
             margin-top: 1rem;
         }
 
-        .cv-modal-body .modal-label:first-child {
+        .cv-modal-body > .modal-label:first-child,
+        .cv-modal-body > .modal-site-link:first-child + .modal-meta + .modal-label {
             margin-top: 0;
+        }
+
+        .cv-modal-body .modal-site-link {
+            margin: 0 0 0.5rem;
+            font-size: 0.8125rem;
+        }
+
+        .cv-modal-body .modal-site-link a {
+            color: #0284C7;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .cv-modal-body .modal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.25rem 0.5rem;
+            margin: 0 0 1rem;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #64748B;
+        }
+
+        .cv-modal-body .modal-meta-sep {
+            color: #CBD5E1;
+            user-select: none;
+        }
+
+        .cv-modal-body .modal-subhead {
+            margin-top: 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #334155;
+        }
+
+        .cv-modal-body .modal-subhead:first-child {
+            margin-top: 0;
+        }
+
+        .cv-modal-body .modal-highlights {
+            margin-top: 0.75rem;
+            padding-left: 1.25rem;
+            list-style: disc;
+        }
+
+        .cv-modal-body .modal-highlights li {
+            font-size: 0.8125rem;
+            line-height: 1.5;
+            color: #475569;
+        }
+
+        .cv-modal-body .modal-highlights li + li {
+            margin-top: 0.375rem;
+        }
+
+        .cv-modal-body .modal-tech {
+            margin: 0.5rem 0 0;
+        }
+
+        .cv-modal-body .modal-tech dt {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #64748B;
+            margin-top: 0.625rem;
+        }
+
+        .cv-modal-body .modal-tech dt:first-child {
+            margin-top: 0;
+        }
+
+        .cv-modal-body .modal-tech dd {
+            margin: 0.25rem 0 0;
+            font-size: 0.8125rem;
+            line-height: 1.5;
+            color: #475569;
         }
 
         .cv-modal-body a {
@@ -364,17 +444,20 @@
                             
                             <div class="flex flex-wrap gap-1.5">
                                 <span class="tech-pill bg-red-600 text-white rounded-full">Ruby on Rails</span>
-                                <span class="tech-pill bg-sky-600 text-white rounded-full">Go</span>
-                                <span class="tech-pill bg-blue-600 text-white rounded-full">Python</span>
+                                <span class="tech-pill bg-rose-600 text-white rounded-full">Alpine.js</span>
                                 <span class="tech-pill bg-orange-600 text-white rounded-full">Hotwire Native</span>
-                                <span class="tech-pill bg-indigo-600 text-white rounded-full">TypeScript</span>
                                 <span class="tech-pill bg-slate-600 text-white rounded-full">PostgreSQL</span>
-                                <span class="tech-pill bg-teal-700 text-white rounded-full">Docker + K8s</span>
-                                <span class="tech-pill bg-amber-600 text-white rounded-full">AWS + Kamal 2</span>
-                                <span class="tech-pill bg-cyan-600 text-white rounded-full">Tailwind</span>
                                 <span class="tech-pill bg-blue-700 text-white rounded-full">BigQuery</span>
                                 <span class="tech-pill bg-red-700 text-white rounded-full">Redis</span>
+                                <span class="tech-pill bg-amber-700 text-white rounded-full">Sidekiq</span>
+                                <span class="tech-pill bg-emerald-600 text-white rounded-full">Stripe</span>
+                                <span class="tech-pill bg-cyan-600 text-white rounded-full">Tailwind</span>
                                 <span class="tech-pill bg-violet-600 text-white rounded-full">RSpec</span>
+                                <span class="tech-pill bg-sky-700 text-white rounded-full">GitHub Actions</span>
+                                <span class="tech-pill bg-indigo-600 text-white rounded-full">Claude Code</span>
+                                <span class="tech-pill bg-slate-700 text-white rounded-full">Cursor</span>
+                                <span class="tech-pill bg-teal-700 text-white rounded-full">Ollama</span>
+                                <span class="tech-pill bg-purple-600 text-white rounded-full">CrewAI</span>
                             </div>
                         </div>
                         <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
@@ -536,9 +619,9 @@
                                 <span class="text-[10px] bg-teal-100 text-teal-700 px-1.5 py-px rounded shrink-0">2014-Present</span>
                             </div>
                             <div class="text-xs text-slate-600 leading-snug mb-2">
-                                10+ year booking platform for rehearsal studios. Complex availability &amp; SumUp iOS payments via Hotwire Native.
+                                11+ year booking platform for rehearsal studios. Rails 8, complex availability &amp; SumUp iOS payments via Hotwire Native.
                             </div>
-                            <div class="text-[10px] text-teal-600 font-medium">Rails • Hotwire Native • Swift • PostgreSQL</div>
+                            <div class="text-[10px] text-teal-600 font-medium">Rails 8 • Hotwire Native • Swift • Cursor</div>
                             <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
                             <span class="cv-read-more-link">Read more</span>
                         </div>
@@ -595,7 +678,7 @@
     </div>
 
     <!-- Detail modals -->
-    <dialog id="cv-modal" class="cv-modal no-print" aria-labelledby="cv-modal-title">
+    <dialog id="cv-modal" class="cv-modal no-print" aria-labelledby="cv-modal-title" aria-describedby="cv-modal-body">
         <div class="flex items-center justify-between gap-4 border-b border-slate-100 px-6 py-5">
             <h2 id="cv-modal-title" class="pr-4 min-w-0 flex-1"></h2>
             <button type="button" id="cv-modal-close" class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors" aria-label="Close">
@@ -615,43 +698,57 @@
         <p><strong>Experience</strong> in a range of web and development technologies.</p>
         <p>A <strong>pragmatic, creative</strong> mind that can solve problems.</p>
         <p>Personable with an <strong>ever-helpful demeanour</strong>.</p>
-        <p><strong>10+ years</strong> of <strong>remote-first collaboration</strong> (since 2012).</p>
+        <p><strong>14+ years</strong> of <strong>remote-first collaboration</strong> (since 2012).</p>
         <p>Proficient <strong>bilingual writer</strong> (British and American English).</p>
         <p class="modal-label">Current Technologies (Last 6m)</p>
-        <p><strong>Ruby</strong>: Rails 8</p>
-        <p><strong>Swift</strong>: Hotwire Native</p>
-        <p><strong>Go</strong>: Protocol Buffers / gRPC</p>
-        <p><strong>Python</strong>: Databricks</p>
-        <p><strong>TypeScript/JavaScript</strong>: Stimulus, Alpine.js, Vue</p>
-        <p><strong>Formats:</strong> HTML, JSON, XML, YAML</p>
-        <p><strong>CSS</strong>: Tailwind CSS, Bootstrap</p>
-        <p><strong>SQL</strong>: PostgreSQL / SQLite</p>
-        <p><strong>Testing</strong>: RSpec, Capybara, Shoulda, Mocha</p>
-        <p><strong>Git</strong>: GitHub / GitLab</p>
-        <p><strong>Unix/Linux</strong>: macOS, Ubuntu, Alpine</p>
-        <p><strong>DevOps:</strong> Docker, Kamal 2, AWS, Kubernetes</p>
-        <p><strong>CI:</strong> GitHub Actions, GitLab CI</p>
+        <dl class="modal-tech">
+            <dt>Ruby</dt><dd>Rails 7 (Happity), Rails 8 (Rehearse.app)</dd>
+            <dt>Swift</dt><dd>Hotwire Native, SumUp SDK</dd>
+            <dt>JavaScript</dt><dd>Stimulus, Alpine.js, Turbo</dd>
+            <dt>Formats</dt><dd>HTML, JSON, YAML</dd>
+            <dt>CSS</dt><dd>SCSS, Bootstrap, Tailwind CSS</dd>
+            <dt>SQL</dt><dd>PostgreSQL / SQLite</dd>
+            <dt>Background jobs</dt><dd>Sidekiq</dd>
+            <dt>Cache</dt><dd>Redis</dd>
+            <dt>Analytics</dt><dd>BigQuery</dd>
+            <dt>Payments</dt><dd>Stripe</dd>
+            <dt>Testing</dt><dd>RSpec, Capybara</dd>
+            <dt>AI</dt><dd>Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI</dd>
+            <dt>Git</dt><dd>GitHub</dd>
+            <dt>Platform</dt><dd>macOS</dd>
+            <dt>DevOps</dt><dd>Docker</dd>
+            <dt>CI</dt><dd>GitHub Actions, Jira (PR workflows)</dd>
+        </dl>
     </template>
 
     <template id="modal-content-happity">
-        <p class="text-sm -mt-1 mb-3"><a href="https://happity.co.uk" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-700">happity.co.uk</a></p>
-        <p><strong>Dates:</strong> 2025 - Present</p>
-        <p><strong>Position:</strong> Senior Software Engineer</p>
+        <p class="modal-site-link"><a href="https://happity.co.uk" target="_blank" rel="noopener">happity.co.uk</a></p>
+        <div class="modal-meta">
+            <span>2025 - Present</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Senior Software Engineer</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Happity is a platform connecting parents with baby and toddler classes across the UK, serving both class providers and the families who book them.</p>
         <p>Led end-to-end delivery of multiple features on the Ruby on Rails platform, including an embeddable third-party booking widget, a provider onboarding pre-approval system, and a promoted listings advertising product. Overhauled newsletter infrastructure, introduced a BigQuery analytics pipeline, and significantly improved platform performance and observability.</p>
-        <p>Used Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code. Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automates the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.</p>
+        <p>Used Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.</p>
+        <p>Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automate the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.</p>
         <p>Day-to-day this meant touching everything from database design and background jobs through to frontend interactions and third-party integrations, working closely with a small team to ship features to a tight product roadmap.</p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Turbo, Stimulus, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</dd>
+            <dt>Tools</dt><dd>Claude Code, GitHub Actions, Jira</dd>
+        </dl>
     </template>
 
     <template id="modal-content-black-square-media">
-        <p class="text-sm -mt-1 mb-3"><a href="https://blacksquaremedia.com" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-700">blacksquaremedia.com</a></p>
-        <p><strong>Dates:</strong> February 2012 - May 2025</p>
-        <p><strong>Position:</strong> Senior Software Engineer</p>
+        <p class="modal-site-link"><a href="https://blacksquaremedia.com" target="_blank" rel="noopener">blacksquaremedia.com</a></p>
+        <div class="modal-meta">
+            <span>February 2012 - May 2025</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Senior Software Engineer</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Black Square Media grew from a team of 4 in 2012 to a team of 7 at its peak. We built and operated services supporting some of the biggest brands in the world including; Target, Nissan, McDonalds, Netflix, Adidas and Expedia.</p>
         <p>For the majority of my time at Black Square, I was building various ad-support services for two main Clients, Verve Mobile and Infectious Media.<br>Both of these companies needed high throughput advertising solutions (built using Go), order management systems (built using Ruby on Rails and AngularJS) and integrations with ad server platforms such as Google Ad Manager (formerly DFP).</p>
@@ -660,16 +757,20 @@
         <p>I developed a video conversion and packaging pipeline for Reuters.tv (part of Thomson Reuters). To enable them to normalise ads served on their site and inside their apps, and allow the most efficient streaming possible, they required any video ad used to be transcoded to several variants of differing qualities then all packaged into both an MPEG-DASH and an HLS format.</p>
         <p>We worked for Nielsen on a data ingestion, scoring and fixing pipeline in Go. It took huge CSVs of video and audio metadata from various platforms and apps and, using the GracenoteDB, matched program titles to known data.<br>The pipeline improved the accuracy and speed of the system phenomenally, it went from a 10% to an 80% match rate and from one file ingestion taking several hours to just minutes.</p>
         <p>Most recently, we worked with VidMob integrating with their Ad partner platforms e.g. Facebook, Snapchat, Reddit, Pinterest, LinkedIn and Google Ad Manager (formerly DFP), to pull in dimension, metric and analytics data from their APIs and transform it and push it into various databases. Primarily this used a combination of Go services Fetch and State and a Platform Handler written in TypeScript, then the pipeline was executed via a Workflow in Databricks.</p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</dd>
+            <dt>Frameworks &amp; platforms</dt><dd>Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</dd>
+        </dl>
     </template>
 
     <template id="modal-content-rawnet">
-        <p class="text-sm -mt-1 mb-3"><a href="https://www.rawnet.com" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-700">rawnet.com</a></p>
-        <p><strong>Dates:</strong> April 2010 - February 2012</p>
-        <p><strong>Position:</strong> Lead Web Developer</p>
+        <p class="modal-site-link"><a href="https://www.rawnet.com" target="_blank" rel="noopener">rawnet.com</a></p>
+        <div class="modal-meta">
+            <span>April 2010 - February 2012</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Lead Web Developer</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Rawnet is an agency, consequently there was great variety in the projects that were commissioned.<br>The following is a sample of the longer-running projects where my role was Lead Developer or Co-lead Developer.</p>
         <ul>
@@ -692,76 +793,102 @@
             <li>contact-list gem - Multi-provider contact list via OmniAuth</li>
             <li>Precious Gems - A pseudo-framework for building apps rapidly, initially deployed with OWL Group projects, a modular gem system using my dynamic-fields gem to extend themselves and model functionality, precious-tagging, precious-friendships, etc..</li>
         </ul>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</dd>
+        </dl>
     </template>
 
     <template id="modal-content-aol">
-        <p class="text-sm -mt-1 mb-3"><a href="http://advertising.aol.co.uk/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-700">advertising.aol.co.uk</a></p>
-        <p><strong>Dates:</strong> September 2007 - February 2010</p>
-        <p><strong>Position:</strong> Systems Developer</p>
+        <p class="modal-site-link"><a href="http://advertising.aol.co.uk/" target="_blank" rel="noopener">advertising.aol.co.uk</a></p>
+        <div class="modal-meta">
+            <span>September 2007 - February 2010</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Systems Developer</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>AOL Advertising (Formerly Advertising.com), had one of the largest advertising networks in the world. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.</p>
         <p>These applications included; Email based request queuing and creative testing services (decompiling flash files and checking click tags, parsing html and JavaScript page inserts for malware and verifying image file metadata); Large scale, client facing, multi-lingual REST based reporting services (both Service and Client); Company Sales Dashboard (Service - RoR, Client - Flex) showing graphs/charts.</p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, Plexigrid (<a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">https://github.com/dim/plexigrid</a>), jQuery, RSpec, Cucumber, TestSpec</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, <a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">Plexigrid</a>, jQuery, RSpec, Cucumber, TestSpec</dd>
+        </dl>
     </template>
 
     <template id="modal-content-debatewise">
-        <p class="text-sm -mt-1 mb-3"><a href="https://debatewise.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-700">debatewise.org</a></p>
-        <p><strong>Dates:</strong> 2006 - September 2007</p>
-        <p><strong>Position:</strong> Lead Developer - Freelance</p>
+        <p class="modal-site-link"><a href="https://debatewise.org/" target="_blank" rel="noopener">debatewise.org</a></p>
+        <div class="modal-meta">
+            <span>2006 - September 2007</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Lead Developer - Freelance</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Debatewise is a website where people discuss topics and formulate a balanced debate.</p>
         <p>I successfully created a basic proof of concept application and was then offered a role architecting and developing the extra, social aspects of the site, as well as designing a more scalable platform.</p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, HTML, CSS, JavaScript</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Prototype JS, RSpec</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, HTML, CSS, JavaScript</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Prototype JS, RSpec</dd>
+        </dl>
     </template>
 
     <template id="modal-content-rehearse">
-        <p><strong>Dates:</strong> December 2014 - Current</p>
-        <p><strong>Position:</strong> Solo Dev</p>
+        <div class="modal-meta">
+            <span>December 2014 - Current</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Solo Dev</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>A side project brought about by a local rehearsal studio not having a booking system, I reached out to the then owner Josh and I started building Rehearse around his needs.</p>
         <p>11+ years and 2 owners later, Rehearse is still going strong and now has <a href="https://apps.apple.com/gb/app/rehearse-pay/id1612656608" target="_blank" rel="noopener">Rehearse Pay</a>, an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.</p>
+        <p>In the last six months I upgraded Rehearse to Rails 8 with ongoing feature work; Cursor is my day-to-day coding environment for the project.</p>
         <p>The main website has built up a lot of features over the years including complex timeslots, restrictions and availability. There's extensive SQL for converting these into a time series for use in the booking grid. An example account is available at <a href="https://test-flight.rehearsal.studio/" target="_blank" rel="noopener">https://test-flight.rehearsal.studio/</a></p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec</dd>
+            <dt>Tools</dt><dd>Cursor</dd>
+        </dl>
     </template>
 
     <template id="modal-content-driver-first-assist">
-        <p><strong>Dates:</strong> Mid 2018 - Current</p>
-        <p><strong>Position:</strong> Solo Dev</p>
+        <div class="modal-meta">
+            <span>Mid 2018 - Current</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Solo Dev</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Helping a family friend out with his charity which has trained over 1500 people in first aid.</p>
         <p>The project consists of a manager which has a section for Trainers to see their upcoming courses and their attendance, and a Members section where they can see their courses and order a toolkit.</p>
         <p>Instead of manually ordering a toolkit for each member, the site allows for members to select their size and enter their postal address and it will use Mechanize to automatically log in, select a toolkit size, enter their address and submit the order.</p>
         <p>The customer-facing documentation is something I'm very proud of. I piggybacked the system tests, adding JavaScript helpers and using CSS to highlight areas of the screen, then automatically took screenshots after each successful test, combining these images in markdown. This was then processed into HTML with the generated images being cropped, using imagemagick, so only the highlighted areas are included in the documentation. This all happened post successful test time, so new documentation is available after each feature is added - a public-accessible section can be seen here: <a href="https://secure.driverfirstassist.org/help/clients/courses.html" target="_blank" rel="noopener">https://secure.driverfirstassist.org/help/clients/courses.html</a></p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</p>
+        <p>This approach has since been extracted into <a href="https://github.com/ajn/dry-doc" target="_blank" rel="noopener">dry-doc</a> (Don't Repeat Yourself Documentation) gems.</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</dd>
+            <dt>Tools</dt><dd><a href="https://github.com/ajn/dry-doc" target="_blank" rel="noopener">dry-doc</a></dd>
+        </dl>
     </template>
 
     <template id="modal-content-accredit">
-        <p><strong>Dates:</strong> Mid - Late 2020</p>
-        <p><strong>Position:</strong> Solo Dev</p>
+        <p class="modal-site-link"><a href="https://aimsadmin.app" target="_blank" rel="noopener">aimsadmin.app</a></p>
+        <div class="modal-meta">
+            <span>Mid - Late 2020</span>
+            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span>Solo Dev</span>
+        </div>
         <p class="modal-label">Overview</p>
         <p>Helping my wife with her Accreditation for AIMS-PICU, which was an accreditation scheme, working with inpatient mental health services to assure and improve the safety and quality of services and their environments.</p>
         <p>At the time there was no way for NHS Mental Health services to collect evidence digitally to submit for accreditation. The idea for the project was to digitise the standards, then to upload evidence for each standard so that Assessors from the Royal College of Psychiatrists (RCPsych) could log in, review and approve the evidence.</p>
         <p>Unfortunately my wife was driving the project internally and she went on maternity leave halfway through, so while it did help, it never quite got used to its full capacity. It did get a mention in the RCPsych newsletter and a year later when she came back onto the project the RCPsych had built their own version, so I hope it helped in some way. The project, dubbed Accredit, is still up at <a href="https://aimsadmin.app" target="_blank" rel="noopener">https://aimsadmin.app</a> with a demo organisation (please ask for demo access), recently updated to Rails 7 and deployed with Kamal 2.</p>
-        <p class="modal-label">Technologies/Languages</p>
-        <p>Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</p>
-        <p class="modal-label">Frameworks/Libraries</p>
-        <p>Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</p>
+        <p class="modal-label">Technologies</p>
+        <dl class="modal-tech">
+            <dt>Languages</dt><dd>Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</dd>
+            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</dd>
+        </dl>
     </template>
     
     <script>
@@ -813,10 +940,13 @@
         const cvModalBody = document.getElementById('cv-modal-body');
         const cvModalTitle = document.getElementById('cv-modal-title');
         const cvModalClose = document.getElementById('cv-modal-close');
+        let cvModalTrigger = null;
 
-        function openCvModal(id) {
+        function openCvModal(id, trigger) {
             const template = document.getElementById('modal-content-' + id);
             if (!template || !cvModal) return;
+
+            cvModalTrigger = trigger || document.activeElement;
 
             const headerHtml = modalHeaders[id];
             if (headerHtml) {
@@ -828,18 +958,24 @@
             }
             cvModalBody.innerHTML = template.innerHTML;
             cvModal.showModal();
+            cvModalClose?.focus();
         }
 
         function closeCvModal() {
-            if (cvModal?.open) cvModal.close();
+            if (!cvModal?.open) return;
+            cvModal.close();
+            if (cvModalTrigger && typeof cvModalTrigger.focus === 'function') {
+                cvModalTrigger.focus();
+            }
+            cvModalTrigger = null;
         }
 
         document.querySelectorAll('.cv-detail-trigger').forEach((trigger) => {
-            trigger.addEventListener('click', () => openCvModal(trigger.dataset.modal));
+            trigger.addEventListener('click', () => openCvModal(trigger.dataset.modal, trigger));
             trigger.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    openCvModal(trigger.dataset.modal);
+                    openCvModal(trigger.dataset.modal, trigger);
                 }
             });
         });
