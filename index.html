@@ -265,7 +265,8 @@
         }
 
         .cv-modal-body > .modal-label:first-child,
-        .cv-modal-body > .modal-site-link:first-child + .modal-meta + .modal-label {
+        .cv-modal-body > .modal-site-link:first-child + .modal-meta + .modal-label,
+        .cv-modal-body > .modal-meta:first-child + .modal-label {
             margin-top: 0;
         }
 
@@ -308,24 +309,21 @@
             margin-top: 0;
         }
 
-        .cv-modal-body .modal-highlights {
+        .cv-modal-body ul + ul {
             margin-top: 0.75rem;
-            padding-left: 1.25rem;
-            list-style: disc;
         }
 
-        .cv-modal-body .modal-highlights li {
-            font-size: 0.8125rem;
-            line-height: 1.5;
-            color: #475569;
+        .cv-modal-body .modal-label + .modal-tech {
+            margin: 0.5rem 0 0;
         }
 
-        .cv-modal-body .modal-highlights li + li {
-            margin-top: 0.375rem;
+        .cv-modal-body p + .modal-tech,
+        .cv-modal-body ul + .modal-tech {
+            margin-top: 1rem;
         }
 
         .cv-modal-body .modal-tech {
-            margin: 0.5rem 0 0;
+            margin: 0 0 0;
         }
 
         .cv-modal-body .modal-tech dt {
@@ -734,10 +732,9 @@
         <p>Used Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.</p>
         <p>Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automate the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.</p>
         <p>Day-to-day this meant touching everything from database design and background jobs through to frontend interactions and third-party integrations, working closely with a small team to ship features to a tight product roadmap.</p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</dd>
             <dt>Tools</dt><dd>Claude Code, GitHub Actions, Jira</dd>
         </dl>
     </template>
@@ -751,16 +748,17 @@
         </div>
         <p class="modal-label">Overview</p>
         <p>Black Square Media grew from a team of 4 in 2012 to a team of 7 at its peak. We built and operated services supporting some of the biggest brands in the world including; Target, Nissan, McDonalds, Netflix, Adidas and Expedia.</p>
-        <p>For the majority of my time at Black Square, I was building various ad-support services for two main Clients, Verve Mobile and Infectious Media.<br>Both of these companies needed high throughput advertising solutions (built using Go), order management systems (built using Ruby on Rails and AngularJS) and integrations with ad server platforms such as Google Ad Manager (formerly DFP).</p>
+        <p>For the majority of my time at Black Square, I was building various ad-support services for two main Clients, Verve Mobile and Infectious Media.</p>
+        <p>Both of these companies needed high throughput advertising solutions (built using Go), order management systems (built using Ruby on Rails and AngularJS) and integrations with ad server platforms such as Google Ad Manager (formerly DFP).</p>
         <p>One service I'm particularly proud of is Verve Location Services (VLS), it is at the core of a Verve Mobile's location offering. Originally built in Lua, then rebuilt in Go, VLS is blisteringly fast at taking minimal user and device information, analysing it and calculating the precise location and quality of the request.</p>
         <p>VLS uses data from various sources (DeviceAtlas, OpenStreetMap, MaxMind, NetAcuity etc.) to extract device information, network level accuracy and physical address (even weather). It also acts as a user store, allowing accurate home/work location tracking as well as segmentation and audience matching.</p>
         <p>I developed a video conversion and packaging pipeline for Reuters.tv (part of Thomson Reuters). To enable them to normalise ads served on their site and inside their apps, and allow the most efficient streaming possible, they required any video ad used to be transcoded to several variants of differing qualities then all packaged into both an MPEG-DASH and an HLS format.</p>
-        <p>We worked for Nielsen on a data ingestion, scoring and fixing pipeline in Go. It took huge CSVs of video and audio metadata from various platforms and apps and, using the GracenoteDB, matched program titles to known data.<br>The pipeline improved the accuracy and speed of the system phenomenally, it went from a 10% to an 80% match rate and from one file ingestion taking several hours to just minutes.</p>
+        <p>We worked for Nielsen on a data ingestion, scoring and fixing pipeline in Go. It took huge CSVs of video and audio metadata from various platforms and apps and, using the GracenoteDB, matched program titles to known data.</p>
+        <p>The pipeline improved the accuracy and speed of the system phenomenally, it went from a 10% to an 80% match rate and from one file ingestion taking several hours to just minutes.</p>
         <p>Most recently, we worked with VidMob integrating with their Ad partner platforms e.g. Facebook, Snapchat, Reddit, Pinterest, LinkedIn and Google Ad Manager (formerly DFP), to pull in dimension, metric and analytics data from their APIs and transform it and push it into various databases. Primarily this used a combination of Go services Fetch and State and a Platform Handler written in TypeScript, then the pipeline was executed via a Workflow in Databricks.</p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</dd>
-            <dt>Frameworks &amp; platforms</dt><dd>Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</dd>
+            <dt>Technologies/Languages</dt><dd>Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</dd>
         </dl>
     </template>
 
@@ -772,7 +770,8 @@
             <span>Lead Web Developer</span>
         </div>
         <p class="modal-label">Overview</p>
-        <p>Rawnet is an agency, consequently there was great variety in the projects that were commissioned.<br>The following is a sample of the longer-running projects where my role was Lead Developer or Co-lead Developer.</p>
+        <p>Rawnet is an agency, consequently there was great variety in the projects that were commissioned.</p>
+        <p>The following is a sample of the longer-running projects where my role was Lead Developer or Co-lead Developer.</p>
         <ul>
             <li>Britain's Advanced Mainstream (BAM) - A service that shares attitudes and behaviours of tech-users with media industry subscribers</li>
             <li>BBC Insight - The forerunner to BAM; Essentially BAM just for the BBC. (I took this project on and rebuilt it as the multi-tenant app BAM)</li>
@@ -785,7 +784,8 @@
             <li>Craster.com - A revamp of a rather drab product site</li>
             <li>CBS Planning Platform - Tree-based profit forecasting tool</li>
         </ul>
-        <p>In addition to the above projects we developed a lot of internal code that helped generate new apps quickly or build standard CMSs.<br>Some of this work was open sourced, but most remains in private repositories or often just supporting sunset products.</p>
+        <p>In addition to the above projects we developed a lot of internal code that helped generate new apps quickly or build standard CMSs.</p>
+        <p>Some of this work was open sourced, but most remains in private repositories or often just supporting sunset products.</p>
         <ul>
             <li>redis-column gem - stores heavy objects away from tables with a lot of rows</li>
             <li>dynamic-fields gem - automatic migrations for ActiveRecord</li>
@@ -793,10 +793,9 @@
             <li>contact-list gem - Multi-provider contact list via OmniAuth</li>
             <li>Precious Gems - A pseudo-framework for building apps rapidly, initially deployed with OWL Group projects, a modular gem system using my dynamic-fields gem to extend themselves and model functionality, precious-tagging, precious-friendships, etc..</li>
         </ul>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</dd>
         </dl>
     </template>
 
@@ -809,11 +808,12 @@
         </div>
         <p class="modal-label">Overview</p>
         <p>AOL Advertising (Formerly Advertising.com), had one of the largest advertising networks in the world. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.</p>
-        <p>These applications included; Email based request queuing and creative testing services (decompiling flash files and checking click tags, parsing html and JavaScript page inserts for malware and verifying image file metadata); Large scale, client facing, multi-lingual REST based reporting services (both Service and Client); Company Sales Dashboard (Service - RoR, Client - Flex) showing graphs/charts.</p>
-        <p class="modal-label">Technologies</p>
+        <p>These applications included; Email based request queuing and creative testing services (decompiling flash files and checking click tags, parsing html and JavaScript page inserts for malware and verifying image file metadata);</p>
+        <p>Large scale, client facing, multi-lingual REST based reporting services (both Service and Client);</p>
+        <p>Company Sales Dashboard (Service - RoR, Client - Flex) showing graphs/charts.</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, <a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">Plexigrid</a>, jQuery, RSpec, Cucumber, TestSpec</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, Plexigrid (<a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">https://github.com/dim/plexigrid</a>), jQuery, RSpec, Cucumber, TestSpec</dd>
         </dl>
     </template>
 
@@ -827,10 +827,9 @@
         <p class="modal-label">Overview</p>
         <p>Debatewise is a website where people discuss topics and formulate a balanced debate.</p>
         <p>I successfully created a basic proof of concept application and was then offered a role architecting and developing the extra, social aspects of the site, as well as designing a more scalable platform.</p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, HTML, CSS, JavaScript</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Prototype JS, RSpec</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, HTML, CSS, JavaScript</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Prototype JS, RSpec</dd>
         </dl>
     </template>
 
@@ -845,10 +844,9 @@
         <p>11+ years and 2 owners later, Rehearse is still going strong and now has <a href="https://apps.apple.com/gb/app/rehearse-pay/id1612656608" target="_blank" rel="noopener">Rehearse Pay</a>, an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.</p>
         <p>In the last six months I upgraded Rehearse to Rails 8 with ongoing feature work; Cursor is my day-to-day coding environment for the project.</p>
         <p>The main website has built up a lot of features over the years including complex timeslots, restrictions and availability. There's extensive SQL for converting these into a time series for use in the booking grid. An example account is available at <a href="https://test-flight.rehearsal.studio/" target="_blank" rel="noopener">https://test-flight.rehearsal.studio/</a></p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec</dd>
             <dt>Tools</dt><dd>Cursor</dd>
         </dl>
     </template>
@@ -865,16 +863,14 @@
         <p>Instead of manually ordering a toolkit for each member, the site allows for members to select their size and enter their postal address and it will use Mechanize to automatically log in, select a toolkit size, enter their address and submit the order.</p>
         <p>The customer-facing documentation is something I'm very proud of. I piggybacked the system tests, adding JavaScript helpers and using CSS to highlight areas of the screen, then automatically took screenshots after each successful test, combining these images in markdown. This was then processed into HTML with the generated images being cropped, using imagemagick, so only the highlighted areas are included in the documentation. This all happened post successful test time, so new documentation is available after each feature is added - a public-accessible section can be seen here: <a href="https://secure.driverfirstassist.org/help/clients/courses.html" target="_blank" rel="noopener">https://secure.driverfirstassist.org/help/clients/courses.html</a></p>
         <p>This approach has since been extracted into <a href="https://github.com/ajn/dry-doc" target="_blank" rel="noopener">dry-doc</a> (Don't Repeat Yourself Documentation) gems.</p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</dd>
             <dt>Tools</dt><dd><a href="https://github.com/ajn/dry-doc" target="_blank" rel="noopener">dry-doc</a></dd>
         </dl>
     </template>
 
     <template id="modal-content-accredit">
-        <p class="modal-site-link"><a href="https://aimsadmin.app" target="_blank" rel="noopener">aimsadmin.app</a></p>
         <div class="modal-meta">
             <span>Mid - Late 2020</span>
             <span class="modal-meta-sep" aria-hidden="true">·</span>
@@ -884,10 +880,9 @@
         <p>Helping my wife with her Accreditation for AIMS-PICU, which was an accreditation scheme, working with inpatient mental health services to assure and improve the safety and quality of services and their environments.</p>
         <p>At the time there was no way for NHS Mental Health services to collect evidence digitally to submit for accreditation. The idea for the project was to digitise the standards, then to upload evidence for each standard so that Assessors from the Royal College of Psychiatrists (RCPsych) could log in, review and approve the evidence.</p>
         <p>Unfortunately my wife was driving the project internally and she went on maternity leave halfway through, so while it did help, it never quite got used to its full capacity. It did get a mention in the RCPsych newsletter and a year later when she came back onto the project the RCPsych had built their own version, so I hope it helped in some way. The project, dubbed Accredit, is still up at <a href="https://aimsadmin.app" target="_blank" rel="noopener">https://aimsadmin.app</a> with a demo organisation (please ask for demo access), recently updated to Rails 7 and deployed with Kamal 2.</p>
-        <p class="modal-label">Technologies</p>
         <dl class="modal-tech">
-            <dt>Languages</dt><dd>Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</dd>
-            <dt>Frameworks &amp; libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</dd>
+            <dt>Technologies/Languages</dt><dd>Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</dd>
+            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</dd>
         </dl>
     </template>
     
