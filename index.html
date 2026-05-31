@@ -355,6 +355,95 @@
             text-decoration: underline;
         }
 
+        .cv-modal-body .profile-section-head {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #475569;
+        }
+
+        .cv-modal-body .profile-section-head::before {
+            content: '';
+            flex-shrink: 0;
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 9999px;
+            background: #0EA5E9;
+        }
+
+        .cv-modal-body > .profile-section-head:first-child {
+            margin-top: 0;
+        }
+
+        .cv-modal-body .profile-objectives {
+            margin-top: 0.5rem;
+        }
+
+        .cv-modal-body .profile-objectives p {
+            margin: 0;
+            font-size: 0.9375rem;
+            line-height: 1.55;
+            color: #334155;
+        }
+
+        .cv-modal-body .profile-objectives p + p {
+            margin-top: 0.625rem;
+        }
+
+        .cv-modal-body .profile-objectives p strong {
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .cv-modal-body .profile-key-skills {
+            margin-top: 0.5rem;
+            padding: 0.75rem 0.875rem 0.75rem 1rem;
+            border-left: 2px solid #7DD3FC;
+            border-radius: 0 0.5rem 0.5rem 0;
+            background: #F8FAFC;
+        }
+
+        .cv-modal-body .profile-key-skills p {
+            margin: 0;
+        }
+
+        .cv-modal-body .profile-key-skills p + p {
+            margin-top: 0.5rem;
+        }
+
+        .cv-modal-body .profile-key-skills strong {
+            font-weight: 700;
+            color: #0369A1;
+        }
+
+        .cv-modal-body .profile-tech {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+            gap: 0.625rem 1.25rem;
+            margin-top: 0.5rem;
+            padding: 0.75rem 0.875rem 0.75rem 1rem;
+            border-left: 2px solid #E2E8F0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            background: #FAFAFA;
+        }
+
+        .cv-modal-body .profile-tech > div {
+            min-width: 0;
+        }
+
+        .cv-modal-body .profile-tech dt {
+            margin-top: 0;
+        }
+
+        .cv-modal-body .profile-tech dd {
+            margin-top: 0.25rem;
+        }
+
         @media print {
             body { background: white; }
             .cv-container { box-shadow: none; margin: 0; max-width: 100%; }
@@ -691,35 +780,39 @@
     </dialog>
 
     <template id="modal-content-profile">
-        <p class="modal-label">Objectives</p>
-        <p>Learn skills and technologies to <strong>improve efficiency</strong>, productivity and quality.</p>
-        <p>Understand practices and motivations to produce <strong>better solutions</strong>.</p>
-        <p>Innovate solutions for old problems to <strong>stay relevant</strong> and competitive.</p>
-        <p class="modal-label">Key Skills</p>
-        <p><strong>Mindful design</strong> and development, adhering to web standards.</p>
-        <p><strong>Experience</strong> in a range of web and development technologies.</p>
-        <p>A <strong>pragmatic, creative</strong> mind that can solve problems.</p>
-        <p>Personable with an <strong>ever-helpful demeanour</strong>.</p>
-        <p><strong>14+ years</strong> of <strong>remote-first collaboration</strong> (since 2012).</p>
-        <p>Proficient <strong>bilingual writer</strong> (British and American English).</p>
-        <p class="modal-label">Current Technologies (Last 6m)</p>
-        <dl class="modal-tech">
-            <dt>Ruby</dt><dd>Rails 7 (Happity), Rails 8 (Rehearse.app)</dd>
-            <dt>Swift</dt><dd>Hotwire Native, SumUp SDK</dd>
-            <dt>JavaScript</dt><dd>Stimulus, Alpine.js, Turbo</dd>
-            <dt>Formats</dt><dd>HTML, JSON, YAML</dd>
-            <dt>CSS</dt><dd>SCSS, Bootstrap, Tailwind CSS</dd>
-            <dt>SQL</dt><dd>PostgreSQL / SQLite</dd>
-            <dt>Background jobs</dt><dd>Sidekiq</dd>
-            <dt>Cache</dt><dd>Redis</dd>
-            <dt>Analytics</dt><dd>BigQuery</dd>
-            <dt>Payments</dt><dd>Stripe</dd>
-            <dt>Testing</dt><dd>RSpec, Capybara</dd>
-            <dt>AI</dt><dd>Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI</dd>
-            <dt>Git</dt><dd>GitHub</dd>
-            <dt>Platform</dt><dd>macOS</dd>
-            <dt>DevOps</dt><dd>Docker</dd>
-            <dt>CI</dt><dd>GitHub Actions, Jira (PR workflows)</dd>
+        <p class="profile-section-head">Objectives</p>
+        <div class="profile-objectives">
+            <p>Learn skills and technologies to <strong>improve efficiency</strong>, productivity and quality.</p>
+            <p>Understand practices and motivations to produce <strong>better solutions</strong>.</p>
+            <p>Innovate solutions for old problems to <strong>stay relevant</strong> and competitive.</p>
+        </div>
+        <p class="profile-section-head">Key Skills</p>
+        <div class="profile-key-skills">
+            <p><strong>Mindful design</strong> and development, adhering to web standards.</p>
+            <p><strong>Experience</strong> in a range of web and development technologies.</p>
+            <p>A <strong>pragmatic, creative</strong> mind that can solve problems.</p>
+            <p>Personable with an <strong>ever-helpful demeanour</strong>.</p>
+            <p><strong>14+ years</strong> of <strong>remote-first collaboration</strong> (since 2012).</p>
+            <p>Proficient <strong>bilingual writer</strong> (British and American English).</p>
+        </div>
+        <p class="profile-section-head">Current Technologies (Last 6m)</p>
+        <dl class="modal-tech profile-tech">
+            <div><dt>Ruby</dt><dd>Rails 7 (Happity), Rails 8 (Rehearse.app)</dd></div>
+            <div><dt>Swift</dt><dd>Hotwire Native, SumUp SDK</dd></div>
+            <div><dt>JavaScript</dt><dd>Stimulus, Alpine.js, Turbo</dd></div>
+            <div><dt>Formats</dt><dd>HTML, JSON, YAML</dd></div>
+            <div><dt>CSS</dt><dd>SCSS, Bootstrap, Tailwind CSS</dd></div>
+            <div><dt>SQL</dt><dd>PostgreSQL / SQLite</dd></div>
+            <div><dt>Background jobs</dt><dd>Sidekiq</dd></div>
+            <div><dt>Cache</dt><dd>Redis</dd></div>
+            <div><dt>Analytics</dt><dd>BigQuery</dd></div>
+            <div><dt>Payments</dt><dd>Stripe</dd></div>
+            <div><dt>Testing</dt><dd>RSpec, Capybara</dd></div>
+            <div><dt>AI</dt><dd>Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI</dd></div>
+            <div><dt>Git</dt><dd>GitHub</dd></div>
+            <div><dt>Platform</dt><dd>macOS</dd></div>
+            <div><dt>DevOps</dt><dd>Docker</dd></div>
+            <div><dt>CI</dt><dd>GitHub Actions, Jira (PR workflows)</dd></div>
         </dl>
     </template>
 
