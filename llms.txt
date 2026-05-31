@@ -6,6 +6,7 @@
 
 - [CV (Markdown)](https://ajneill.dev/cv.md): Canonical work history, skills, and project detail for agents and humans.
 - [CV (HTML)](https://ajneill.dev/): Interactive infographic résumé (print-ready).
+- [CV (PDF)](https://ajneill.dev/cv.pdf): Print-ready PDF export of the infographic résumé.
 
 ## Contact
 

@@ -17,6 +17,8 @@ Father of four, with a **"can do" attitude** to work and life.
 [hireme@ajneill.dev](mailto:hireme@ajneill.dev) / [github.com/ajn](https://github.com/ajn)
 Kettering, UK · [ajneill.dev](https://ajneill.dev/)
 
+**Formats:** [HTML](https://ajneill.dev/) · [PDF](https://ajneill.dev/cv.pdf)
+
 **Objectives**
 
 Learn skills and technologies to **improve efficiency**, productivity and quality.
@@ -229,7 +231,7 @@ Some of this work was open sourced, but most remains in private repositories or 
 
 **European innovation team**
 
-AOL Advertising (Formerly Advertising.com), had one of the largest advertising networks in the world. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.
+AOL Advertising (formerly Advertising.com) had one of the largest advertising networks in the world; the business was later sold to Verizon and merged into Yahoo's ad platform. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.
 
 **Applications delivered**
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Neill - Senior Software Engineer</title>
     <link rel="alternate" type="text/markdown" href="cv.md" title="Curriculum Vitae (Markdown)">
+    <link rel="alternate" type="application/pdf" href="cv.pdf" title="Curriculum Vitae (PDF)">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -444,23 +445,352 @@
             margin-top: 0.25rem;
         }
 
+        .cv-print-details {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            width: 210mm;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .cv-print-section--new-page {
+            break-before: page;
+            page-break-before: always;
+        }
+
+        .cv-print-section-head {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem 0.75rem;
+        }
+
+        .cv-print-section-head > span {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+
+        .cv-print-section-head .cv-logo {
+            height: 2rem;
+            width: auto;
+            max-width: 10rem;
+        }
+
+        .cv-print-section-head.logo-includes-name .cv-logo {
+            height: 2.25rem;
+            max-width: 11rem;
+        }
+
+        .cv-print-section-head .company-name,
+        .cv-print-section-head > span > .font-semibold.text-slate-900,
+        .cv-print-section-head > .font-semibold.text-slate-900 {
+            font-size: 1.375rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .cv-print-section-head.logo-includes-name .company-name {
+            display: none;
+        }
+
+        .cv-print-section-head .premium-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.625rem;
+            border-radius: 0.375rem;
+        }
+
+        .cv-print-section-body {
+            max-height: none;
+            overflow: visible;
+        }
+
         @media print {
-            body { background: white; }
-            .cv-container { box-shadow: none; margin: 0; max-width: 100%; }
-            .no-print { display: none; }
-            .cv-detail-trigger { cursor: default; }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            html {
+                --print-header-bg: #F5F5F4;
+            }
+
+            html, body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .no-print,
+            #cv-modal,
             .cv-read-more-hover,
             .cv-read-more-link {
                 display: none !important;
+            }
+
+            .cv-print-details {
+                display: block !important;
+                position: static !important;
+                left: auto !important;
+                width: auto !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+            }
+
+            .max-w-\[210mm\] {
+                max-width: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .cv-print-front {
+                page-break-after: always;
+                break-after: page;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin: 0 auto;
+                padding: 8mm 0 0;
+                box-sizing: border-box;
+            }
+
+            .cv-print-front,
+            .cv-print-details {
+                zoom: var(--print-zoom, 0.90);
+                box-shadow: none !important;
+            }
+
+            .cv-print-front .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
+            }
+
+            .cv-print-front .cv-print-bar {
+                background-color: var(--print-header-bg) !important;
+                color: #1E293B !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .cv-print-front .cv-print-bar:first-of-type {
+                padding-top: 1.25rem !important;
+                padding-bottom: 0.75rem !important;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
+            }
+
+            .cv-print-front .cv-print-bar:last-of-type {
+                flex-wrap: wrap !important;
+                row-gap: 0.25rem !important;
+                column-gap: 0.75rem !important;
+                font-size: 0.65rem !important;
+                line-height: 1.35 !important;
+                padding: 0.5rem 1rem !important;
+            }
+
+            .cv-print-front .cv-container > .cv-print-bar {
+                margin-left: -10mm !important;
+                margin-right: -10mm !important;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
+            }
+
+            .cv-print-front .cv-print-bar:last-of-type .text-slate-400 {
+                display: none !important;
+            }
+
+            .cv-print-front .cv-print-bar h1,
+            .cv-print-front .cv-print-bar .font-display {
+                color: #0F172A !important;
+            }
+
+            .cv-print-front .cv-print-bar .text-\[\#7DD3FC\] {
+                color: #0369A1 !important;
+            }
+
+            .cv-print-front .cv-print-bar .text-slate-300,
+            .cv-print-front .cv-print-bar .text-slate-400 {
+                color: #475569 !important;
+            }
+
+            .cv-print-front .cv-print-bar a {
+                color: #0284C7 !important;
+            }
+
+            .cv-print-front .order-1,
+            .cv-print-front .order-3 {
+                background-color: #FFFFFF !important;
+            }
+
+            .cv-print-front .order-1,
+            .cv-print-front .order-2,
+            .cv-print-front .order-3 {
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .cv-print-front .order-3 {
+                padding-top: 0 !important;
+            }
+
+            .cv-print-front .cv-card {
+                padding: 0.875rem !important;
+            }
+
+            .cv-print-front .mb-7,
+            .cv-print-front .mb-8 {
+                margin-bottom: 0.875rem !important;
+            }
+
+            .cv-print-front .cv-detail-trigger .text-xs.leading-relaxed {
+                line-height: 1.4 !important;
+            }
+
+            .cv-print-front .rounded-t-3xl,
+            .cv-print-front .rounded-b-3xl,
+            .cv-print-front .rounded-2xl,
+            .cv-print-front .rounded-3xl {
+                border-radius: 0 !important;
+            }
+
+            .cv-print-front .cv-card,
+            .cv-print-front .cv-detail-trigger,
+            .cv-print-front .border,
+            .cv-print-front .border-slate-100,
+            .cv-print-front .border-slate-200,
+            .cv-print-front .lg\:border-r {
+                border: none !important;
+            }
+
+            .cv-print-front img {
+                border: none !important;
+                box-shadow: none !important;
+                --tw-ring-shadow: 0 0 #0000 !important;
+            }
+
+            .cv-print-front .shadow-xl,
+            .cv-print-front .shadow-lg,
+            .cv-print-front .cv-card {
+                box-shadow: none !important;
+            }
+
+            .cv-print-front .sm\:hidden {
+                display: none !important;
+            }
+
+            .cv-print-front .hidden.sm\:flex {
+                display: flex !important;
+            }
+
+            .cv-print-front .hidden.sm\:block {
+                display: block !important;
+            }
+
+            .cv-print-front .grid.grid-cols-12 {
+                display: grid !important;
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+                column-gap: 1.25rem !important;
+            }
+
+            .cv-print-front .order-1 {
+                grid-column: 1 / span 4;
+                grid-row: 1;
+            }
+
+            .cv-print-front .order-2 {
+                grid-column: 5 / span 8;
+                grid-row: 1 / span 2;
+            }
+
+            .cv-print-front .order-3 {
+                grid-column: 1 / span 4;
+                grid-row: 2;
+            }
+
+            .cv-print-front .cv-detail-trigger {
+                cursor: default;
+                padding-bottom: 0.375rem !important;
+            }
+
+            .cv-print-section {
+                page-break-before: auto;
+                break-before: auto;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 8mm 10mm 10mm;
+            }
+
+            .cv-print-section--new-page {
+                page-break-before: always;
+                break-before: page;
+            }
+
+            .cv-print-section-head {
+                page-break-after: avoid;
+                break-after: avoid;
+                break-inside: avoid;
+                border: none !important;
+                background-color: var(--print-header-bg) !important;
+                margin-left: -10mm;
+                margin-right: -10mm;
+                padding-left: 10mm !important;
+                padding-right: 10mm !important;
+            }
+
+            .cv-print-section-body {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+
+            .cv-print-section-body .modal-subhead {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            .cv-print-details .profile-objectives p {
+                font-size: 0.9375rem !important;
+            }
+
+            .cv-print-details .profile-key-skills {
+                border-left: 2px solid #7DD3FC !important;
+                background-color: #F8FAFC !important;
+            }
+
+            .cv-print-details .profile-tech {
+                grid-template-columns: repeat(2, 1fr) !important;
+                border-left: 2px solid #E2E8F0 !important;
+                background-color: #FAFAFA !important;
+            }
+
+            .cv-print-section-body .modal-label {
+                color: #475569 !important;
+            }
+
+            .cv-print-details a {
+                color: #0284C7 !important;
+                text-decoration: underline !important;
             }
         }
     </style>
 </head>
 <body class="bg-slate-100 py-8">
     <div class="max-w-[210mm] mx-auto px-4">
-        
+
+        <div class="cv-print-front">
+
         <!-- Header -->
-        <div class="bg-[#0F172A] text-white rounded-t-3xl px-5 sm:px-8 lg:px-10 py-6 sm:py-7 shadow-xl">
+        <div class="cv-print-bar bg-[#0F172A] text-white rounded-t-3xl px-5 sm:px-8 lg:px-10 py-6 sm:py-7 shadow-xl">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start sm:gap-6">
                 <!-- Mobile header -->
                 <div class="sm:hidden min-w-0 flex-1">
@@ -581,6 +911,8 @@
                                     </div>
                                 </div>
                                 
+                                <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">UK platform connecting parents with baby and toddler classes.</p>
+                                
                                 <div class="mt-2 text-xs text-slate-600 leading-relaxed pl-1">
                                     • End-to-end delivery of booking widget, provider onboarding &amp; promoted listings ads<br>
                                     • Introduced BigQuery analytics pipeline + major performance &amp; observability gains<br>
@@ -600,6 +932,8 @@
                                     </div>
                                     <div class="text-xs text-slate-500">Senior Software Engineer (13 years) - 2012 - 2025</div>
                                 </div>
+                                
+                                <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Boutique consultancy building high-throughput ad-tech and data pipelines for global brands.</p>
                                 
                                 <div class="mt-2 text-xs text-slate-600 leading-relaxed pl-1">
                                     • High-throughput Go ad services for Verve &amp; Infectious (Netflix, McDonald’s, Adidas)<br>
@@ -633,6 +967,8 @@
                                     <div class="text-xs text-slate-500">Lead Web Developer - 2010 - 2012</div>
                                 </div>
                                 
+                                <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Digital agency delivering varied web platforms for major clients.</p>
+                                
                                 <div class="mt-2 text-xs text-slate-600 leading-relaxed pl-1">
                                     • Led multi-tenant platforms for BBC Insight, O2, Williams F1, Jordan Publishing<br>
                                     • Created &amp; open-sourced several Rails gems still used today
@@ -663,6 +999,8 @@
                                     <div class="text-xs text-slate-500">Systems Developer - 2007 - 2010</div>
                                 </div>
                                 
+                                <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Formerly one of the world's largest ad networks, later sold to Verizon and merged into Yahoo.</p>
+                                
                                 <div class="mt-2 text-xs text-slate-600 leading-relaxed pl-1">
                                     • Part of 4-man UK innovation team (SCRUM) delivering European multilingual apps<br>
                                     • Built large-scale REST reporting, creative testing &amp; sales dashboards
@@ -680,6 +1018,8 @@
                                     </div>
                                     <div class="text-xs text-slate-500">Lead Developer - Freelance - 2006 - 2007</div>
                                 </div>
+                                
+                                <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Website where people discuss topics and formulate a balanced debate.</p>
                                 
                                 <div class="mt-2 text-xs text-slate-600 leading-relaxed pl-1">
                                     • Built proof-of-concept app, then architected social features &amp; scalable platform<br>
@@ -750,7 +1090,7 @@
             </div>
             
             <!-- Footer -->
-            <div class="bg-[#0F172A] text-white px-8 py-3 text-center text-xs flex items-center justify-center gap-x-4 rounded-b-3xl">
+            <div class="cv-print-bar bg-[#0F172A] text-white px-8 py-3 text-center text-xs flex items-center justify-center gap-x-4 rounded-b-3xl">
                 <div>
                     <span class="font-medium">BSc Music Technology (2:2)</span> - Birmingham City University
                 </div>
@@ -761,12 +1101,18 @@
             </div>
             
         </div>
-        
+
+        </div><!-- /.cv-print-front -->
+
         <div class="text-center mt-4 text-xs text-slate-400 no-print">
-            <a href="cv.md" class="text-slate-500 hover:text-slate-700 underline-offset-2 hover:underline">Markdown Version</a>
+            <a href="cv.md" class="text-slate-500 hover:text-slate-700 underline-offset-2 hover:underline">Markdown</a>
+            <span class="text-slate-300 mx-2">·</span>
+            <a href="cv.pdf" class="text-slate-500 hover:text-slate-700 underline-offset-2 hover:underline">PDF</a>
         </div>
-        
+
     </div>
+
+    <section id="cv-print-details" class="cv-print-details" aria-hidden="true"></section>
 
     <!-- Detail modals -->
     <dialog id="cv-modal" class="cv-modal no-print" aria-labelledby="cv-modal-title" aria-describedby="cv-modal-body">
@@ -916,7 +1262,7 @@
         </div>
         <p class="modal-label">Overview</p>
         <p class="modal-subhead">European innovation team</p>
-        <p>AOL Advertising (Formerly Advertising.com), had one of the largest advertising networks in the world. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.</p>
+        <p>AOL Advertising (formerly Advertising.com) had one of the largest advertising networks in the world; the business was later sold to Verizon and merged into Yahoo's ad platform. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.</p>
         <p class="modal-subhead">Applications delivered</p>
         <p>These applications included; Email based request queuing and creative testing services (decompiling flash files and checking click tags, parsing html and JavaScript page inserts for malware and verifying image file metadata);</p>
         <p>Large scale, client facing, multi-lingual REST based reporting services (both Service and Client);</p>
@@ -1114,6 +1460,155 @@
         function printCV() {
             window.print();
         }
+
+        const printModalOrder = [
+            'profile',
+            'happity',
+            'black-square-media',
+            'driver-first-assist',
+            'rehearse',
+            'accredit',
+            'rawnet',
+            'aol',
+            'debatewise'
+        ];
+
+        const A4_PRINTABLE_PX = 980;
+        const PRINT_ZOOM_SNAP = [0.90, 0.87, 0.84, 0.81, 0.78];
+        const PRINT_ZOOM_MIN = 0.78;
+
+        function withPrintDetailsMeasurable(callback) {
+            const container = document.getElementById('cv-print-details');
+            if (!container) return;
+
+            const sections = container.querySelectorAll('.cv-print-section');
+            if (!sections.length) return;
+
+            const saved = {
+                position: container.style.position,
+                left: container.style.left,
+                top: container.style.top,
+                width: container.style.width,
+                visibility: container.style.visibility,
+                zIndex: container.style.zIndex,
+                pointerEvents: container.style.pointerEvents,
+                zoom: container.style.zoom
+            };
+
+            container.style.position = 'fixed';
+            container.style.left = '0';
+            container.style.top = '0';
+            container.style.width = '210mm';
+            container.style.visibility = 'hidden';
+            container.style.zIndex = '-1';
+            container.style.pointerEvents = 'none';
+
+            callback(sections, container);
+
+            container.style.position = saved.position;
+            container.style.left = saved.left;
+            container.style.top = saved.top;
+            container.style.width = saved.width;
+            container.style.visibility = saved.visibility;
+            container.style.zIndex = saved.zIndex;
+            container.style.pointerEvents = saved.pointerEvents;
+            container.style.zoom = saved.zoom;
+        }
+
+        function computeUniformPrintZoom(container, sections) {
+            container.style.zoom = '1';
+
+            let maxHeight = 0;
+            sections.forEach((section) => {
+                maxHeight = Math.max(maxHeight, section.offsetHeight);
+            });
+
+            for (const step of PRINT_ZOOM_SNAP) {
+                if (maxHeight * step <= A4_PRINTABLE_PX) return step;
+            }
+
+            return PRINT_ZOOM_MIN;
+        }
+
+        function applyPrintZoom(zoom, container) {
+            document.documentElement.style.setProperty('--print-zoom', String(zoom));
+            if (container) {
+                container.style.zoom = String(zoom);
+            }
+        }
+
+        function layoutPrintPageBreaks(sections) {
+            sections.forEach((section) => {
+                section.classList.remove('cv-print-section--new-page');
+            });
+
+            let remainingOnPage = A4_PRINTABLE_PX;
+
+            sections.forEach((section, index) => {
+                const height = section.getBoundingClientRect().height;
+
+                if (index > 0 && height > remainingOnPage) {
+                    section.classList.add('cv-print-section--new-page');
+                    remainingOnPage = A4_PRINTABLE_PX - height;
+                } else {
+                    remainingOnPage -= height;
+                }
+            });
+        }
+
+        function preparePrintLayout() {
+            withPrintDetailsMeasurable((sections, container) => {
+                const zoom = computeUniformPrintZoom(container, sections);
+                applyPrintZoom(zoom, container);
+                layoutPrintPageBreaks(sections);
+            });
+        }
+
+        function schedulePrintLayout() {
+            requestAnimationFrame(preparePrintLayout);
+        }
+
+        function buildPrintDetails() {
+            const container = document.getElementById('cv-print-details');
+            if (!container) return;
+
+            printModalOrder.forEach((id) => {
+                const template = document.getElementById('modal-content-' + id);
+                if (!template) return;
+
+                const article = document.createElement('article');
+                article.className = 'cv-print-section';
+                article.dataset.modal = id;
+
+                const header = document.createElement('header');
+                header.className = 'cv-print-section-head' + (id === 'happity' || id === 'rawnet' ? ' logo-includes-name' : '');
+
+                const headerHtml = modalHeaders[id];
+                if (headerHtml) {
+                    header.innerHTML = headerHtml;
+                } else {
+                    header.textContent = modalHeaderAccessibleNames[id] || id;
+                }
+
+                const body = document.createElement('div');
+                body.className = 'cv-modal-body cv-print-section-body px-6 py-5';
+                body.innerHTML = template.innerHTML;
+
+                article.appendChild(header);
+                article.appendChild(body);
+                container.appendChild(article);
+            });
+
+            preparePrintLayout();
+            schedulePrintLayout();
+        }
+
+        buildPrintDetails();
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(schedulePrintLayout);
+        }
+        window.addEventListener('load', schedulePrintLayout);
+        window.addEventListener('beforeprint', preparePrintLayout);
         
         console.log('%c[CV] Press Ctrl/Cmd + P to print or save as PDF', 'color:#64748b');
     </script>
