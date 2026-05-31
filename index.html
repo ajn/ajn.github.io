@@ -12,10 +12,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         
         :root {
-            --navy: #0F172A;
-            --teal: #0EA5E9;
+            --print-zoom: 0.9;
         }
-        
+
         body {
             font-family: 'Inter', system_ui, sans-serif;
         }
@@ -25,190 +24,33 @@
             font-weight: 600;
         }
 
-        .section-header {
-            font-size: 0.95rem;
-            letter-spacing: -.025em;
-        }
-
-        .timeline-line {
-            background: linear-gradient(to bottom, #CBD5E1 0%, #CBD5E1 100%);
-        }
-
-        .cv-card {
-            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08),
-                        0 1px 2px rgba(15, 23, 42, 0.04);
-        }
-
-        .mini-pill {
-            font-size: 0.65rem;
-            padding: 1px 6px;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
-        }
-
-        .tech-pill {
-            font-size: 0.68rem;
-            padding: 2px 8px;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
-        }
-
-        .cv-container {
-            max-width: 210mm;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-        }
-
         .logo-includes-name .company-name {
             display: none;
         }
 
-        .key-clients {
-            gap: 0.625rem 0.75rem;
-        }
-
-        .key-clients-label {
-            font-size: 0.75rem;
-        }
-
-        .key-clients img {
-            height: 2rem;
-            border-radius: 0.5rem;
-        }
-
-        .key-clients img[alt="McDonald's"],
-        .key-clients img[alt="Adidas"] {
-            background-color: white;
-        }
-
-        .key-clients img[alt="Netflix"],
-        .key-clients img[alt="Craster"] {
-            background-color: #000;
-        }
-
-        .key-clients img[alt="LoveThis"] {
-            background-color: #5C3389;
-        }
-
-        .key-clients img[alt="Craster"] {
-            height: 1.5rem;
-            max-width: 4.25rem;
-        }
-
-        .experience-header {
-            padding-bottom: 0.25rem;
-        }
-
-        .experience-header > .text-xs,
-        .experience-header > div > .text-xs {
-            padding-top: 0.25rem;
-        }
-
-        .cv-detail-trigger {
-            position: relative;
-            cursor: pointer;
-            border-radius: 0.75rem;
-            margin-left: -0.5rem;
-            margin-right: -0.5rem;
-            padding: 0.375rem 0.5rem;
-        }
-
-        .cv-detail-trigger:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 2px #0EA5E9;
-        }
-
-        .cv-read-more-hover,
-        .cv-read-more-link {
-            pointer-events: none;
-        }
-
-        .cv-read-more-link {
-            position: absolute;
-            bottom: 0.5rem;
-            right: 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #0284C7;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .cv-read-more-hover {
-            display: none;
-        }
-
-        @media (max-width: 1023px) {
-            .cv-detail-trigger {
-                padding-bottom: 1.75rem;
-            }
-
-            .cv-detail-trigger.cv-card {
-                padding-bottom: 2.25rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .cv-read-more-link {
-                display: none;
-            }
-
-            .cv-read-more-hover {
-                display: flex;
-                position: absolute;
-                inset: 0;
-                align-items: center;
-                justify-content: center;
-                background-color: rgba(241, 245, 249, 0.94);
-                border-radius: 0.75rem;
-                font-family: 'Space Grotesk', 'Inter', sans-serif;
-                font-weight: 700;
-                font-size: 1.375rem;
-                letter-spacing: -0.02em;
-                color: #334155;
-                opacity: 0;
-                transition: opacity 0.15s ease;
-            }
-
-            .cv-detail-trigger:hover .cv-read-more-hover {
-                opacity: 1;
-            }
-
-            .cv-detail-trigger.cv-card .cv-read-more-hover {
-                border-radius: 1rem;
-            }
-        }
-
-        .cv-modal {
-            max-width: 42rem;
-            width: calc(100% - 2rem);
-            max-height: calc(100vh - 2rem);
-            margin: auto;
-            padding: 0;
-            border: 1px solid #E2E8F0;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.2);
-            overflow: hidden;
-        }
-
-        .cv-modal::backdrop {
-            background: rgba(15, 23, 42, 0.55);
-        }
-
-        #cv-modal-title {
+        :is(#cv-modal-title, .cv-print-section-head) {
             display: flex;
             align-items: center;
         }
 
-        #cv-modal-title > span {
+        :is(#cv-modal-title, .cv-print-section-head) > span {
             display: flex;
             align-items: center;
             gap: 0.875rem;
         }
 
+        :is(#cv-modal-title, .cv-print-section-head) .cv-logo {
+            width: auto;
+        }
+
         #cv-modal-title .cv-logo {
             height: 3rem;
-            width: auto;
             max-width: 14rem;
+        }
+
+        .cv-print-section-head .cv-logo {
+            height: 2rem;
+            max-width: 10rem;
         }
 
         #cv-modal-title.logo-includes-name .cv-logo {
@@ -216,231 +58,32 @@
             max-width: 16rem;
         }
 
-        #cv-modal-title .company-name,
-        #cv-modal-title > span > .font-semibold.text-slate-900,
-        #cv-modal-title > .font-semibold.text-slate-900 {
-            font-size: 1.75rem;
+        .cv-print-section-head.logo-includes-name .cv-logo {
+            height: 2.25rem;
+            max-width: 11rem;
+        }
+
+        :is(#cv-modal-title, .cv-print-section-head) .company-name,
+        :is(#cv-modal-title, .cv-print-section-head) > span > .font-semibold.text-slate-900,
+        :is(#cv-modal-title, .cv-print-section-head) > .font-semibold.text-slate-900 {
             line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
-        #cv-modal-title.logo-includes-name .company-name {
+        #cv-modal-title .company-name,
+        #cv-modal-title > span > .font-semibold.text-slate-900,
+        #cv-modal-title > .font-semibold.text-slate-900 {
+            font-size: 1.75rem;
+        }
+
+        .cv-print-section-head .company-name,
+        .cv-print-section-head > span > .font-semibold.text-slate-900,
+        .cv-print-section-head > .font-semibold.text-slate-900 {
+            font-size: 1.375rem;
+        }
+
+        :is(#cv-modal-title, .cv-print-section-head).logo-includes-name .company-name {
             display: none;
-        }
-
-        .cv-modal-body {
-            max-height: calc(100vh - 8rem);
-            overflow-y: auto;
-        }
-
-        .cv-modal-body p,
-        .cv-modal-body li {
-            font-size: 0.8125rem;
-            line-height: 1.625;
-            color: #475569;
-        }
-
-        .cv-modal-body p + p,
-        .cv-modal-body ul {
-            margin-top: 0.75rem;
-        }
-
-        .cv-modal-body ul {
-            padding-left: 1.25rem;
-            list-style: disc;
-        }
-
-        .cv-modal-body li + li {
-            margin-top: 0.375rem;
-        }
-
-        .cv-modal-body .modal-label {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #64748B;
-            margin-top: 1rem;
-        }
-
-        .cv-modal-body > .modal-label:first-child,
-        .cv-modal-body > .modal-site-link:first-child + .modal-meta + .modal-label,
-        .cv-modal-body > .modal-meta:first-child + .modal-label {
-            margin-top: 0;
-        }
-
-        .cv-modal-body .modal-site-link {
-            margin: 0 0 0.5rem;
-            font-size: 0.8125rem;
-        }
-
-        .cv-modal-body .modal-site-link a {
-            color: #0284C7;
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-        .cv-modal-body .modal-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.25rem 0.5rem;
-            margin: 0 0 1rem;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            color: #64748B;
-        }
-
-        .cv-modal-body .modal-meta-sep {
-            color: #CBD5E1;
-            user-select: none;
-        }
-
-        .cv-modal-body .modal-subhead {
-            margin-top: 1rem;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            line-height: 1.4;
-            color: #334155;
-        }
-
-        .cv-modal-body .modal-subhead:first-child {
-            margin-top: 0;
-        }
-
-        .cv-modal-body .modal-subhead + p {
-            margin-top: 0.375rem;
-        }
-
-        .cv-modal-body ul + ul {
-            margin-top: 0.75rem;
-        }
-
-        .cv-modal-body .modal-label + .modal-tech {
-            margin: 0.5rem 0 0;
-        }
-
-        .cv-modal-body p + .modal-tech,
-        .cv-modal-body ul + .modal-tech {
-            margin-top: 1rem;
-        }
-
-        .cv-modal-body .modal-tech {
-            margin: 0 0 0;
-        }
-
-        .cv-modal-body .modal-tech dt {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #64748B;
-            margin-top: 0.625rem;
-        }
-
-        .cv-modal-body .modal-tech dt:first-child {
-            margin-top: 0;
-        }
-
-        .cv-modal-body .modal-tech dd {
-            margin: 0.25rem 0 0;
-            font-size: 0.8125rem;
-            line-height: 1.5;
-            color: #475569;
-        }
-
-        .cv-modal-body a {
-            color: #0284C7;
-            text-decoration: underline;
-        }
-
-        .cv-modal-body .profile-section-head {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1.25rem;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: #475569;
-        }
-
-        .cv-modal-body .profile-section-head::before {
-            content: '';
-            flex-shrink: 0;
-            width: 0.25rem;
-            height: 0.25rem;
-            border-radius: 9999px;
-            background: #0EA5E9;
-        }
-
-        .cv-modal-body > .profile-section-head:first-child {
-            margin-top: 0;
-        }
-
-        .cv-modal-body .profile-objectives {
-            margin-top: 0.5rem;
-        }
-
-        .cv-modal-body .profile-objectives p {
-            margin: 0;
-            font-size: 0.9375rem;
-            line-height: 1.55;
-            color: #334155;
-        }
-
-        .cv-modal-body .profile-objectives p + p {
-            margin-top: 0.625rem;
-        }
-
-        .cv-modal-body .profile-objectives p strong {
-            font-weight: 700;
-            color: #0F172A;
-        }
-
-        .cv-modal-body .profile-key-skills {
-            margin-top: 0.5rem;
-            padding: 0.75rem 0.875rem 0.75rem 1rem;
-            border-left: 2px solid #7DD3FC;
-            border-radius: 0 0.5rem 0.5rem 0;
-            background: #F8FAFC;
-        }
-
-        .cv-modal-body .profile-key-skills p {
-            margin: 0;
-        }
-
-        .cv-modal-body .profile-key-skills p + p {
-            margin-top: 0.5rem;
-        }
-
-        .cv-modal-body .profile-key-skills strong {
-            font-weight: 700;
-            color: #0369A1;
-        }
-
-        .cv-modal-body .profile-tech {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
-            gap: 0.625rem 1.25rem;
-            margin-top: 0.5rem;
-            padding: 0.75rem 0.875rem 0.75rem 1rem;
-            border-left: 2px solid #E2E8F0;
-            border-radius: 0 0.5rem 0.5rem 0;
-            background: #FAFAFA;
-        }
-
-        .cv-modal-body .profile-tech > div {
-            min-width: 0;
-        }
-
-        .cv-modal-body .profile-tech dt {
-            margin-top: 0;
-        }
-
-        .cv-modal-body .profile-tech dd {
-            margin-top: 0.25rem;
         }
 
         .cv-print-details {
@@ -452,59 +95,27 @@
             pointer-events: none;
         }
 
+        @media not print {
+            .cv-print-details--measure {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 210mm;
+                visibility: hidden;
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+
         .cv-print-section--new-page {
             break-before: page;
             page-break-before: always;
-        }
-
-        .cv-print-section-head {
-            display: flex;
-            align-items: center;
-            padding: 1.25rem 1.5rem 0.75rem;
-        }
-
-        .cv-print-section-head > span {
-            display: flex;
-            align-items: center;
-            gap: 0.875rem;
-        }
-
-        .cv-print-section-head .cv-logo {
-            height: 2rem;
-            width: auto;
-            max-width: 10rem;
-        }
-
-        .cv-print-section-head.logo-includes-name .cv-logo {
-            height: 2.25rem;
-            max-width: 11rem;
-        }
-
-        .cv-print-section-head .company-name,
-        .cv-print-section-head > span > .font-semibold.text-slate-900,
-        .cv-print-section-head > .font-semibold.text-slate-900 {
-            font-size: 1.375rem;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        .cv-print-section-head.logo-includes-name .company-name {
-            display: none;
-        }
-
-        .cv-print-section-body {
-            max-height: none;
-            overflow: visible;
         }
 
         @media print {
             @page {
                 size: A4;
                 margin: 0;
-            }
-
-            html {
-                --print-header-bg: #F5F5F4;
             }
 
             html, body {
@@ -516,9 +127,7 @@
             }
 
             .no-print,
-            #cv-modal,
-            .cv-read-more-hover,
-            .cv-read-more-link {
+            #cv-modal {
                 display: none !important;
             }
 
@@ -553,67 +162,35 @@
                 box-shadow: none !important;
             }
 
-            .cv-print-front .cv-container {
-                box-shadow: none !important;
+            .cv-print-front > div:nth-of-type(2) {
                 margin: 0 !important;
                 max-width: none !important;
-                border: none !important;
-                border-radius: 0 !important;
                 padding-left: 10mm !important;
                 padding-right: 10mm !important;
             }
 
-            .cv-print-front .cv-print-bar {
-                background-color: var(--print-header-bg) !important;
-                color: #1E293B !important;
-                border: none !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .cv-print-front .cv-print-bar:first-of-type {
+            .cv-print-front > div:first-of-type {
                 padding-top: 1.25rem !important;
                 padding-bottom: 0.75rem !important;
                 padding-left: 10mm !important;
                 padding-right: 10mm !important;
             }
 
-            .cv-print-front .cv-print-bar:last-of-type {
+            .cv-print-footer {
                 flex-wrap: wrap !important;
                 row-gap: 0.25rem !important;
                 column-gap: 0.75rem !important;
                 font-size: 0.65rem !important;
                 line-height: 1.35 !important;
                 padding: 0.5rem 1rem !important;
-            }
-
-            .cv-print-front .cv-container > .cv-print-bar {
                 margin-left: -10mm !important;
                 margin-right: -10mm !important;
                 padding-left: 10mm !important;
                 padding-right: 10mm !important;
             }
 
-            .cv-print-front .cv-print-bar:last-of-type .text-slate-400 {
+            .cv-print-footer .text-slate-400 {
                 display: none !important;
-            }
-
-            .cv-print-front .cv-print-bar h1,
-            .cv-print-front .cv-print-bar .font-display {
-                color: #0F172A !important;
-            }
-
-            .cv-print-front .cv-print-bar .text-\[\#7DD3FC\] {
-                color: #0369A1 !important;
-            }
-
-            .cv-print-front .cv-print-bar .text-slate-300,
-            .cv-print-front .cv-print-bar .text-slate-400 {
-                color: #475569 !important;
-            }
-
-            .cv-print-front .cv-print-bar a {
-                color: #0284C7 !important;
             }
 
             .cv-print-front .order-1,
@@ -634,8 +211,9 @@
                 padding-top: 0 !important;
             }
 
-            .cv-print-front .cv-card {
-                padding: 0.875rem !important;
+            .cv-print-front .cv-detail-trigger {
+                cursor: default;
+                padding-bottom: 0.375rem !important;
             }
 
             .cv-print-front .mb-7,
@@ -647,19 +225,13 @@
                 line-height: 1.4 !important;
             }
 
-            .cv-print-front .rounded-t-3xl,
-            .cv-print-front .rounded-b-3xl,
-            .cv-print-front .rounded-2xl,
-            .cv-print-front .rounded-3xl {
+            .cv-print-front .rounded-2xl {
                 border-radius: 0 !important;
             }
 
-            .cv-print-front .cv-card,
             .cv-print-front .cv-detail-trigger,
             .cv-print-front .border,
-            .cv-print-front .border-slate-100,
-            .cv-print-front .border-slate-200,
-            .cv-print-front .lg\:border-r {
+            .cv-print-front .border-slate-100 {
                 border: none !important;
             }
 
@@ -669,19 +241,13 @@
                 --tw-ring-shadow: 0 0 #0000 !important;
             }
 
-            .cv-print-front .shadow-xl,
             .cv-print-front .shadow-lg,
-            .cv-print-front .cv-card {
+            .cv-print-front .shadow-md {
                 box-shadow: none !important;
             }
 
-            .cv-print-front .tech-pill,
-            .cv-print-front .key-clients img,
-            .cv-print-front .mini-pill {
-                box-shadow: none !important;
-            }
-
-            .cv-print-front .tech-pill {
+            .cv-print-front [class*="rounded-full"],
+            .cv-print-details [class*="rounded-full"] {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -704,24 +270,17 @@
                 column-gap: 1.25rem !important;
             }
 
-            .cv-print-front .order-1 {
+            .cv-print-front .cv-sidebar {
+                display: flex !important;
+                flex-direction: column;
+                gap: 1rem;
                 grid-column: 1 / span 4;
-                grid-row: 1;
+                grid-row: 1 / span 2;
             }
 
             .cv-print-front .order-2 {
                 grid-column: 5 / span 8;
                 grid-row: 1 / span 2;
-            }
-
-            .cv-print-front .order-3 {
-                grid-column: 1 / span 4;
-                grid-row: 2;
-            }
-
-            .cv-print-front .cv-detail-trigger {
-                cursor: default;
-                padding-bottom: 0.375rem !important;
             }
 
             .cv-print-section {
@@ -732,21 +291,14 @@
                 padding: 8mm 10mm 10mm;
             }
 
-            .cv-print-section--new-page {
-                page-break-before: always;
-                break-before: page;
-            }
-
             .cv-print-section-head {
                 page-break-after: avoid;
                 break-after: avoid;
                 break-inside: avoid;
                 border: none !important;
-                background-color: var(--print-header-bg) !important;
-                margin-left: -10mm;
-                margin-right: -10mm;
-                padding-left: 10mm !important;
-                padding-right: 10mm !important;
+                background: transparent !important;
+                padding: 0 0 0.75rem !important;
+                margin: 0 0 1rem 0 !important;
             }
 
             .cv-print-section-body {
@@ -756,63 +308,53 @@
                 padding-bottom: 1rem !important;
             }
 
+            .cv-print-details .tech-pill,
+            .cv-print-details [class*="rounded-full"] {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
             .cv-print-section-body .modal-subhead {
                 page-break-after: avoid;
                 break-after: avoid;
             }
 
-            .cv-print-details .profile-objectives p {
-                font-size: 0.9375rem !important;
-            }
-
-            .cv-print-details .profile-key-skills {
-                border-left: 2px solid #7DD3FC !important;
-                background-color: #F8FAFC !important;
-            }
-
-            .cv-print-details .profile-tech {
-                grid-template-columns: repeat(2, 1fr) !important;
-                border-left: 2px solid #E2E8F0 !important;
-                background-color: #FAFAFA !important;
+            .cv-print-details .modal-tech {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             }
 
             .cv-print-section-body .modal-label {
                 color: #475569 !important;
             }
-
-            .cv-print-details a {
-                color: #0284C7 !important;
-                text-decoration: underline !important;
-            }
         }
     </style>
 </head>
-<body class="bg-slate-100 py-8">
+<body class="bg-white py-8">
     <div class="max-w-[210mm] mx-auto px-4">
 
         <div class="cv-print-front">
 
         <!-- Header -->
-        <div class="cv-print-bar bg-[#0F172A] text-white rounded-t-3xl px-5 sm:px-8 lg:px-10 py-6 sm:py-7 shadow-xl">
+        <div class="text-slate-900 px-5 sm:px-8 lg:px-10 py-6 sm:py-7">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start sm:gap-6">
                 <!-- Mobile header -->
                 <div class="sm:hidden min-w-0 flex-1">
-                    <h1 class="font-display text-2xl tracking-tighter leading-tight">ALEXANDER NEILL</h1>
-                    <p class="text-[#7DD3FC] text-base mt-1 tracking-tight">Senior Software Engineer • 20 Years Experience</p>
-                    <p class="text-slate-300 text-sm mt-0.5">Ruby on Rails • Go • Python • Modern UI</p>
+                    <h1 class="font-display text-2xl tracking-tighter leading-tight text-slate-900">ALEXANDER NEILL</h1>
+                    <p class="text-sky-700 text-base mt-1 tracking-tight">Senior Software Engineer • 20 Years Experience</p>
+                    <p class="text-slate-500 text-sm mt-0.5">Ruby on Rails • Go • Python • Modern UI</p>
                     <div class="flex items-start gap-4 mt-4">
                         <img src="ajneill-avatar.jpg" alt="Alexander Neill"
-                             class="w-16 h-16 shrink-0 rounded-2xl object-cover border-[2.5px] border-white/20 shadow-lg ring-1 ring-white/10">
+                             class="w-16 h-16 shrink-0 rounded-2xl object-cover border-[2.5px] border-slate-900/10 shadow-md ring-1 ring-slate-900/10">
                         <div class="text-sm leading-tight min-w-0">
-                            <div class="flex items-center gap-x-2 text-slate-300">
+                            <div class="flex items-center gap-x-2 text-slate-500">
                                 <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Kettering, UK</span>
                             </div>
                             <div class="mt-1">
-                                <a href="mailto:hireme@ajneill.dev" class="hover:text-white transition-colors break-all">hireme@ajneill.dev</a>
+                                <a href="mailto:hireme@ajneill.dev" class="break-all text-sky-600 hover:text-slate-900">hireme@ajneill.dev</a>
                             </div>
                             <div class="mt-1 text-xs">
-                                <a href="https://github.com/ajn" target="_blank" class="hover:text-white transition-colors">github.com/ajn</a>
+                                <a href="https://github.com/ajn" target="_blank" class="text-sky-600 hover:text-slate-900">github.com/ajn</a>
                             </div>
                         </div>
                     </div>
@@ -821,96 +363,150 @@
                 <!-- Desktop header -->
                 <div class="hidden sm:flex items-start gap-5 min-w-0 flex-1">
                     <img src="ajneill-avatar.jpg" alt="Alexander Neill"
-                         class="w-20 h-20 shrink-0 rounded-2xl object-cover border-[2.5px] border-white/20 shadow-lg ring-1 ring-white/10">
+                         class="w-20 h-20 shrink-0 rounded-2xl object-cover border-[2.5px] border-slate-900/10 shadow-md ring-1 ring-slate-900/10">
                     <div class="min-w-0 flex-1">
-                        <h1 class="font-display text-3xl lg:text-4xl tracking-tighter leading-tight">ALEXANDER NEILL</h1>
-                        <p class="text-[#7DD3FC] text-lg mt-1 tracking-tight">Senior Software Engineer • 20 Years Experience</p>
-                        <p class="text-slate-300 text-sm mt-0.5">Ruby on Rails • Go • Python • Modern UI</p>
+                        <h1 class="font-display text-3xl lg:text-4xl tracking-tighter leading-tight text-slate-900">ALEXANDER NEILL</h1>
+                        <p class="text-sky-700 text-lg mt-1 tracking-tight">Senior Software Engineer • 20 Years Experience</p>
+                        <p class="text-slate-500 text-sm mt-0.5">Ruby on Rails • Go • Python • Modern UI</p>
                     </div>
                 </div>
 
                 <div class="hidden sm:block text-sm shrink-0 text-right">
-                    <div class="flex items-center justify-end gap-x-2 text-slate-300">
+                    <div class="flex items-center justify-end gap-x-2 text-slate-500">
                         <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
                         <span>Kettering, UK</span>
                     </div>
                     <div class="mt-1 flex items-center justify-end gap-x-2">
-                        <a href="mailto:hireme@ajneill.dev" class="hover:text-white transition-colors">hireme@ajneill.dev</a>
+                        <a href="mailto:hireme@ajneill.dev" class="text-sky-600 hover:text-slate-900">hireme@ajneill.dev</a>
                     </div>
                     <div class="flex items-center justify-end gap-x-3 mt-1 text-xs">
-                        <a href="https://github.com/ajn" target="_blank" class="hover:text-white transition-colors">github.com/ajn</a>
+                        <a href="https://github.com/ajn" target="_blank" class="text-sky-600 hover:text-slate-900">github.com/ajn</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white rounded-b-3xl shadow-xl overflow-hidden border border-slate-200 cv-container">
+        <div class="max-w-[210mm] mx-auto bg-white overflow-hidden">
             
-            <div class="grid grid-cols-12">
+            <div class="grid grid-cols-12 lg:items-start">
+
+                <div class="cv-sidebar max-lg:contents lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:flex lg:flex-col lg:gap-4 lg:p-6">
                 
                 <!-- Profile (sidebar top on desktop) -->
-                <div class="col-span-12 lg:col-span-4 lg:col-start-1 lg:row-start-1 order-1 bg-slate-50 border-slate-200 lg:border-r p-6">
-                    
-                    <div class="cv-card cv-detail-trigger group bg-white rounded-2xl p-5 border border-slate-100 hover:border-sky-200 transition-colors" data-modal="profile" tabindex="0" role="button" aria-label="View full Profile and Technologies details">
+                <div class="col-span-12 order-1 p-6 lg:p-0">
+                    <div class="mb-3 flex items-center gap-2 before:h-4 before:w-1 before:shrink-0 before:rounded-sm before:bg-sky-500 before:content-['']">
+                        <span class="text-xs font-semibold tracking-wider text-slate-700">PROFILE &amp; TECHNOLOGIES</span>
+                    </div>
+
+                    <div class="group relative -mx-2 cursor-pointer rounded-xl px-2 py-1.5 pb-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:mx-0 lg:rounded-none lg:px-0 lg:pb-1.5 cv-detail-trigger" data-modal="profile" tabindex="0" role="button" aria-label="View full Profile and Technologies details">
                         <div class="mb-4">
-                            <div class="font-semibold text-slate-900">PROFILE</div>
-                            <div class="text-[10px] text-slate-500 -mt-0.5">Father of four • Pragmatic problem solver</div>
+                            <div class="text-xs text-slate-500">Father of four • Pragmatic problem solver</div>
                         </div>
-                        
-                        <div class="text-xs text-slate-600 leading-relaxed mb-4">
+
+                        <div class="text-[10px] text-slate-600 leading-relaxed mb-4">
                             14 years remote-first collaboration.<br>
                             Bilingual (British &amp; American English).
                         </div>
-                        
-                        <!-- Technologies -->
-                        <div class="border-t border-slate-100 pt-4">
-                            <div class="text-xs font-semibold text-slate-700 mb-3 tracking-wider">TECHNOLOGIES</div>
-                            
+
+                        <div class="border-t border-slate-100 pt-4 lg:border-t-0 lg:mt-2 lg:pt-4">
                             <div class="flex flex-wrap gap-1.5">
-                                <span class="tech-pill bg-red-600 text-white rounded-full">Ruby on Rails</span>
-                                <span class="tech-pill bg-rose-600 text-white rounded-full">Alpine.js</span>
-                                <span class="tech-pill bg-orange-600 text-white rounded-full">Hotwire Native</span>
-                                <span class="tech-pill bg-slate-600 text-white rounded-full">PostgreSQL</span>
-                                <span class="tech-pill bg-blue-700 text-white rounded-full">BigQuery</span>
-                                <span class="tech-pill bg-red-700 text-white rounded-full">Redis</span>
-                                <span class="tech-pill bg-amber-700 text-white rounded-full">Sidekiq</span>
-                                <span class="tech-pill bg-emerald-600 text-white rounded-full">Stripe</span>
-                                <span class="tech-pill bg-cyan-600 text-white rounded-full">Tailwind</span>
-                                <span class="tech-pill bg-violet-600 text-white rounded-full">RSpec</span>
-                                <span class="tech-pill bg-sky-700 text-white rounded-full">GitHub Actions</span>
-                                <span class="tech-pill bg-indigo-600 text-white rounded-full">Claude Code</span>
-                                <span class="tech-pill bg-slate-700 text-white rounded-full">Cursor</span>
-                                <span class="tech-pill bg-teal-700 text-white rounded-full">Ollama</span>
-                                <span class="tech-pill bg-purple-600 text-white rounded-full">CrewAI</span>
+                                <span class="rounded-full bg-red-100 px-2 py-0.5 text-[0.68rem] font-semibold text-red-700">Ruby on Rails</span>
+                                <span class="rounded-full bg-rose-100 px-2 py-0.5 text-[0.68rem] font-semibold text-rose-700">Alpine.js</span>
+                                <span class="rounded-full bg-orange-100 px-2 py-0.5 text-[0.68rem] font-semibold text-orange-700">Hotwire Native</span>
+                                <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[0.68rem] font-semibold text-slate-700">PostgreSQL</span>
+                                <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[0.68rem] font-semibold text-blue-700">BigQuery</span>
+                                <span class="rounded-full bg-red-100 px-2 py-0.5 text-[0.68rem] font-semibold text-red-800">Redis</span>
+                                <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[0.68rem] font-semibold text-amber-700">Sidekiq</span>
+                                <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[0.68rem] font-semibold text-emerald-700">Stripe</span>
+                                <span class="rounded-full bg-cyan-100 px-2 py-0.5 text-[0.68rem] font-semibold text-cyan-700">Tailwind</span>
+                                <span class="rounded-full bg-violet-100 px-2 py-0.5 text-[0.68rem] font-semibold text-violet-700">RSpec</span>
+                                <span class="rounded-full bg-sky-100 px-2 py-0.5 text-[0.68rem] font-semibold text-sky-700">GitHub Actions</span>
+                                <span class="rounded-full bg-indigo-100 px-2 py-0.5 text-[0.68rem] font-semibold text-indigo-700">Claude Code</span>
+                                <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[0.68rem] font-semibold text-slate-700">Cursor</span>
+                                <span class="rounded-full bg-teal-100 px-2 py-0.5 text-[0.68rem] font-semibold text-teal-700">Ollama</span>
+                                <span class="rounded-full bg-purple-100 px-2 py-0.5 text-[0.68rem] font-semibold text-purple-700">CrewAI</span>
                             </div>
                         </div>
-                        <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                        <span class="cv-read-more-link">Read more</span>
+                        <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-2xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                        <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                     </div>
                 </div>
                 
+                <!-- Side Projects (sidebar bottom on desktop, after experience on mobile) -->
+                <div class="col-span-12 order-3 p-6 max-lg:pt-0 lg:p-0">
+                    <div class="mb-3 flex items-center gap-2 before:h-4 before:w-1 before:shrink-0 before:rounded-sm before:bg-orange-500 before:content-['']">
+                        <span class="text-xs font-semibold tracking-wider text-slate-700">SIDE PROJECTS</span>
+                    </div>
+
+                    <div class="space-y-3">
+
+                        <!-- Rehearse.app -->
+                        <div class="group relative cv-detail-trigger cursor-pointer rounded-2xl border border-slate-100 p-4 pb-7 transition-colors hover:border-teal-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:rounded-none lg:border-0 lg:p-0 lg:pb-1.5 lg:hover:border-0" data-modal="rehearse" tabindex="0" role="button" aria-label="View full Rehearse.app details">
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="font-semibold text-sm">Rehearse.app</span>
+                                <span class="text-[10px] bg-teal-100 text-teal-700 px-1.5 py-px rounded shrink-0">2014-Present</span>
+                            </div>
+                            <div class="text-xs text-slate-600 leading-snug mb-2">
+                                11+ year booking platform for rehearsal studios. Rails 8, complex availability &amp; SumUp iOS payments via Hotwire Native.
+                            </div>
+                            <div class="text-[10px] text-teal-600 font-medium">Rails 8 • Hotwire Native • Swift • Cursor</div>
+                            <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                            <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
+                        </div>
+
+                        <!-- Driver First Assist -->
+                        <div class="group relative cv-detail-trigger cursor-pointer rounded-2xl border border-slate-100 p-4 pb-7 transition-colors hover:border-emerald-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:rounded-none lg:border-0 lg:p-0 lg:pb-1.5 lg:hover:border-0" data-modal="driver-first-assist" tabindex="0" role="button" aria-label="View full Driver First Assist details">
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="font-semibold text-sm">Driver First Assist</span>
+                                <span class="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-px rounded shrink-0">2018-Present</span>
+                            </div>
+                            <div class="text-xs text-slate-600 leading-snug mb-2">
+                                Charity first-aid training site. Automated toolkit ordering + self-documenting test suite with screenshot guides.
+                            </div>
+                            <div class="text-[10px] text-emerald-600 font-medium">Rails • Hotwire • RSpec • Render</div>
+                            <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                            <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
+                        </div>
+
+                        <!-- Accredit -->
+                        <div class="group relative cv-detail-trigger cursor-pointer rounded-2xl border border-slate-100 p-4 pb-7 transition-colors hover:border-violet-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:rounded-none lg:border-0 lg:p-0 lg:pb-1.5 lg:hover:border-0" data-modal="accredit" tabindex="0" role="button" aria-label="View full Accredit details">
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="font-semibold text-sm">Accredit (AIMS-PICU)</span>
+                                <span class="text-[10px] bg-violet-100 text-violet-700 px-1.5 py-px rounded shrink-0">2020</span>
+                            </div>
+                            <div class="text-xs text-slate-600 leading-snug mb-2">
+                                NHS mental health accreditation evidence system. Digital upload &amp; assessor review. Featured in RCPsych newsletter.
+                            </div>
+                            <div class="text-[10px] text-violet-600 font-medium">Rails 7 • Kamal 2 • PostgreSQL</div>
+                            <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                            <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
+                        </div>
+
+                    </div>
+                </div>
+                </div><!-- /.cv-sidebar -->
+
                 <!-- MAIN CONTENT -->
-                <div class="col-span-12 lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:row-span-2 order-2 p-7">
+                <div class="col-span-12 lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:row-span-2 order-2 p-6">
                     
                     <!-- Experience -->
                     <div class="mb-8">
-                        <div class="flex items-center gap-x-2 mb-4">
-                            <div class="w-1 h-4 bg-[#0EA5E9] rounded"></div>
-                            <div class="font-semibold text-lg tracking-tight text-slate-900">PROFESSIONAL EXPERIENCE</div>
+                        <div class="mb-3 flex items-center gap-2 before:h-4 before:w-1 before:shrink-0 before:rounded-sm before:bg-sky-500 before:content-['']">
+                            <span class="text-xs font-semibold tracking-wider text-slate-700">PROFESSIONAL EXPERIENCE</span>
                         </div>
                         
                         <!-- Experience entries -->
-                        <div>
+                        <div class="pt-5">
                             
                             <!-- Happity -->
-                            <div class="mb-7 cv-detail-trigger group" data-modal="happity" tabindex="0" role="button" aria-label="View full Happity details">
-                                <div class="flex items-start justify-between experience-header">
+                            <div class="group relative -mx-2 mb-7 cursor-pointer rounded-xl px-2 py-1.5 pb-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:pb-1.5 cv-detail-trigger pt-0" data-modal="happity" tabindex="0" role="button" aria-label="View full Happity details">
+                                <div class="flex items-start justify-between pb-1">
                                     <div>
                                         <div class="flex items-center gap-x-2 logo-includes-name">
                                             <img src="logos/happity.png" alt="Happity" class="cv-logo h-5 object-contain">
                                             <span class="font-semibold text-slate-900 company-name">Happity</span>
                                         </div>
-                                        <div class="text-xs text-slate-500">Senior Software Engineer - 2025 - Present</div>
+                                        <div class="pt-1 text-xs text-slate-500">Senior Software Engineer - 2025 - Present</div>
                                     </div>
                                 </div>
                                 
@@ -922,18 +518,18 @@
                                     • Integrated Claude Code as a daily coding assistant, writing a comprehensive codebase guide to improve AI output quality, and built custom skills for prompt generation and automated staging deployments<br>
                                     • Shipped GitHub Actions workflows to automate Jira ticket transitions on PR approval
                                 </div>
-                                <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                                <span class="cv-read-more-link">Read more</span>
+                                <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                                <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                             </div>
                             
                             <!-- Black Square Media -->
-                            <div class="mb-7 cv-detail-trigger group" data-modal="black-square-media" tabindex="0" role="button" aria-label="View full Black Square Media details">
-                                <div class="experience-header">
+                            <div class="group relative -mx-2 mb-7 cursor-pointer rounded-xl px-2 py-1.5 pb-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:pb-1.5 cv-detail-trigger" data-modal="black-square-media" tabindex="0" role="button" aria-label="View full Black Square Media details">
+                                <div class="pb-1">
                                     <div class="flex items-center gap-x-2">
                                         <img src="logos/black-square-media.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900 company-name">Black Square Media</span>
                                     </div>
-                                    <div class="text-xs text-slate-500">Senior Software Engineer (13 years) - 2012 - 2025</div>
+                                    <div class="pt-1 text-xs text-slate-500">Senior Software Engineer (13 years) - 2012 - 2025</div>
                                 </div>
                                 
                                 <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Boutique consultancy building high-throughput ad-tech and data pipelines for global brands.</p>
@@ -946,28 +542,28 @@
                                 </div>
                                 
                                 <!-- Client logos -->
-                                <div class="key-clients mt-2.5 pl-1 flex items-center flex-wrap">
-                                    <span class="key-clients-label text-slate-400 mr-0.5">Key clients:</span>
-                                    <img src="logos/netflix.png" alt="Netflix" class="cv-logo object-contain">
-                                    <img src="logos/mcdonalds.png" alt="McDonald's" class="cv-logo object-contain">
-                                    <img src="logos/adidas.png" alt="Adidas" class="cv-logo object-contain">
-                                    <img src="logos/target.png" alt="Target" class="cv-logo object-contain">
-                                    <img src="logos/reuters.png" alt="Reuters" class="cv-logo object-contain">
-                                    <img src="logos/nielsen.png" alt="Nielsen" class="cv-logo object-contain">
-                                    <img src="logos/vidmob.png" alt="VidMob" class="cv-logo object-contain">
+                                <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2.5 pl-1">
+                                    <span class="mr-0.5 text-xs text-slate-400">Key clients:</span>
+                                    <img src="logos/netflix.png" alt="Netflix" class="cv-logo h-8 rounded-lg bg-black object-contain">
+                                    <img src="logos/mcdonalds.png" alt="McDonald's" class="cv-logo h-8 rounded-lg bg-white object-contain">
+                                    <img src="logos/adidas.png" alt="Adidas" class="cv-logo h-8 rounded-lg bg-white object-contain">
+                                    <img src="logos/target.png" alt="Target" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/reuters.png" alt="Reuters" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/nielsen.png" alt="Nielsen" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/vidmob.png" alt="VidMob" class="cv-logo h-8 rounded-lg object-contain">
                                 </div>
-                                <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                                <span class="cv-read-more-link">Read more</span>
+                                <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                                <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                             </div>
                             
                             <!-- Rawnet -->
-                            <div class="mb-7 cv-detail-trigger group" data-modal="rawnet" tabindex="0" role="button" aria-label="View full Rawnet details">
-                                <div class="experience-header">
+                            <div class="group relative -mx-2 mb-7 cursor-pointer rounded-xl px-2 py-1.5 pb-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:pb-1.5 cv-detail-trigger" data-modal="rawnet" tabindex="0" role="button" aria-label="View full Rawnet details">
+                                <div class="pb-1">
                                     <div class="flex items-center gap-x-2 logo-includes-name">
                                         <img src="https://www.rawnet.com/hubfs/rawnet-logo-2025.svg" alt="Rawnet" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900 company-name">Rawnet</span>
                                     </div>
-                                    <div class="text-xs text-slate-500">Lead Web Developer - 2010 - 2012</div>
+                                    <div class="pt-1 text-xs text-slate-500">Lead Web Developer - 2010 - 2012</div>
                                 </div>
                                 
                                 <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Digital agency delivering varied web platforms for major clients.</p>
@@ -978,28 +574,28 @@
                                 </div>
                                 
                                 <!-- Rawnet client logos -->
-                                <div class="key-clients mt-2.5 pl-1 flex items-center flex-wrap">
-                                    <span class="key-clients-label text-slate-400 mr-0.5">Key clients:</span>
-                                    <img src="logos/bbc.png" alt="BBC" class="cv-logo object-contain">
-                                    <img src="logos/o2.png" alt="O2" class="cv-logo object-contain">
-                                    <img src="logos/williams.png" alt="Williams F1" class="cv-logo object-contain">
-                                    <img src="logos/fiftyconnect.png" alt="50Connect" class="cv-logo object-contain">
-                                    <img src="logos/lovethis.png" alt="LoveThis" class="cv-logo object-contain">
-                                    <img src="logos/jordan-publishing.png" alt="Jordan Publishing" class="cv-logo object-contain">
-                                    <img src="logos/craster.png" alt="Craster" class="cv-logo object-contain">
+                                <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2.5 pl-1">
+                                    <span class="mr-0.5 text-xs text-slate-400">Key clients:</span>
+                                    <img src="logos/bbc.png" alt="BBC" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/o2.png" alt="O2" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/williams.png" alt="Williams F1" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/fiftyconnect.png" alt="50Connect" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/lovethis.png" alt="LoveThis" class="cv-logo h-8 rounded-lg bg-[#5C3389] object-contain">
+                                    <img src="logos/jordan-publishing.png" alt="Jordan Publishing" class="cv-logo h-8 rounded-lg object-contain">
+                                    <img src="logos/craster.png" alt="Craster" class="cv-logo h-6 max-w-[4.25rem] rounded-lg bg-black object-contain">
                                 </div>
-                                <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                                <span class="cv-read-more-link">Read more</span>
+                                <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                                <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                             </div>
                             
                             <!-- AOL -->
-                            <div class="mb-7 cv-detail-trigger group" data-modal="aol" tabindex="0" role="button" aria-label="View full AOL Advertising details">
-                                <div class="experience-header">
+                            <div class="group relative -mx-2 mb-7 cursor-pointer rounded-xl px-2 py-1.5 pb-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:pb-1.5 cv-detail-trigger" data-modal="aol" tabindex="0" role="button" aria-label="View full AOL Advertising details">
+                                <div class="pb-1">
                                     <div class="flex items-center gap-x-2">
                                         <img src="logos/aol.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900">AOL Advertising</span>
                                     </div>
-                                    <div class="text-xs text-slate-500">Systems Developer - 2007 - 2010</div>
+                                    <div class="pt-1 text-xs text-slate-500">Systems Developer - 2007 - 2010</div>
                                 </div>
                                 
                                 <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Formerly one of the world's largest ad networks, later sold to Verizon and merged into Yahoo.</p>
@@ -1008,18 +604,18 @@
                                     • Part of 4-man UK innovation team (SCRUM) delivering European multilingual apps<br>
                                     • Built large-scale REST reporting, creative testing &amp; sales dashboards
                                 </div>
-                                <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                                <span class="cv-read-more-link">Read more</span>
+                                <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                                <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                             </div>
 
                             <!-- Debatewise -->
-                            <div class="cv-detail-trigger group" data-modal="debatewise" tabindex="0" role="button" aria-label="View full Debatewise details">
-                                <div class="experience-header">
+                            <div class="group relative -mx-2 cursor-pointer rounded-xl px-2 py-1.5 pb-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 lg:pb-1.5 cv-detail-trigger" data-modal="debatewise" tabindex="0" role="button" aria-label="View full Debatewise details">
+                                <div class="pb-1">
                                     <div class="flex items-center gap-x-2">
                                         <img src="logos/debatewise.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900 company-name">Debatewise</span>
                                     </div>
-                                    <div class="text-xs text-slate-500">Lead Developer - Freelance - 2006 - 2007</div>
+                                    <div class="pt-1 text-xs text-slate-500">Lead Developer - Freelance - 2006 - 2007</div>
                                 </div>
                                 
                                 <p class="mt-2 text-xs text-slate-500 leading-snug pl-1">Website where people discuss topics and formulate a balanced debate.</p>
@@ -1028,8 +624,8 @@
                                     • Built proof-of-concept app, then architected social features &amp; scalable platform<br>
                                     • Freelance lead on balanced debate discussion site
                                 </div>
-                                <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                                <span class="cv-read-more-link">Read more</span>
+                                <span class="pointer-events-none absolute inset-0 hidden items-center justify-center rounded-xl bg-slate-100/95 font-display text-[1.375rem] font-bold tracking-tight text-slate-700 opacity-0 transition-opacity group-hover:opacity-100 print:hidden lg:flex" aria-hidden="true">Read more</span>
+                                <span class="pointer-events-none absolute bottom-2 right-3 text-xs font-semibold text-sky-600 underline underline-offset-2 print:hidden lg:hidden">Read more</span>
                             </div>
                             
                         </div>
@@ -1037,69 +633,17 @@
                     
                 </div>
 
-                <!-- Side Projects (sidebar bottom on desktop, after experience on mobile) -->
-                <div class="col-span-12 lg:col-span-4 lg:col-start-1 lg:row-start-2 order-3 bg-slate-50 border-slate-200 lg:border-r p-6 lg:pt-0">
-                    <div class="flex items-center gap-x-2 mb-3">
-                        <div class="w-1 h-4 bg-[#F97316] rounded"></div>
-                        <div class="text-xs font-semibold text-slate-700 tracking-wider">SIDE PROJECTS</div>
-                    </div>
 
-                    <div class="space-y-3">
-
-                        <!-- Rehearse.app -->
-                        <div class="cv-card cv-detail-trigger border border-slate-100 rounded-2xl p-4 hover:border-teal-200 transition-colors" data-modal="rehearse" tabindex="0" role="button" aria-label="View full Rehearse.app details">
-                            <div class="flex items-center justify-between gap-2 mb-1.5">
-                                <span class="font-semibold text-sm">Rehearse.app</span>
-                                <span class="text-[10px] bg-teal-100 text-teal-700 px-1.5 py-px rounded shrink-0">2014-Present</span>
-                            </div>
-                            <div class="text-xs text-slate-600 leading-snug mb-2">
-                                11+ year booking platform for rehearsal studios. Rails 8, complex availability &amp; SumUp iOS payments via Hotwire Native.
-                            </div>
-                            <div class="text-[10px] text-teal-600 font-medium">Rails 8 • Hotwire Native • Swift • Cursor</div>
-                            <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                            <span class="cv-read-more-link">Read more</span>
-                        </div>
-
-                        <!-- Driver First Assist -->
-                        <div class="cv-card cv-detail-trigger border border-slate-100 rounded-2xl p-4 hover:border-emerald-200 transition-colors" data-modal="driver-first-assist" tabindex="0" role="button" aria-label="View full Driver First Assist details">
-                            <div class="flex items-center justify-between gap-2 mb-1.5">
-                                <span class="font-semibold text-sm">Driver First Assist</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-px rounded shrink-0">2018-Present</span>
-                            </div>
-                            <div class="text-xs text-slate-600 leading-snug mb-2">
-                                Charity first-aid training site. Automated toolkit ordering + self-documenting test suite with screenshot guides.
-                            </div>
-                            <div class="text-[10px] text-emerald-600 font-medium">Rails • Hotwire • RSpec • Render</div>
-                            <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                            <span class="cv-read-more-link">Read more</span>
-                        </div>
-
-                        <!-- Accredit -->
-                        <div class="cv-card cv-detail-trigger border border-slate-100 rounded-2xl p-4 hover:border-violet-200 transition-colors" data-modal="accredit" tabindex="0" role="button" aria-label="View full Accredit details">
-                            <div class="flex items-center justify-between gap-2 mb-1.5">
-                                <span class="font-semibold text-sm">Accredit (AIMS-PICU)</span>
-                                <span class="text-[10px] bg-violet-100 text-violet-700 px-1.5 py-px rounded shrink-0">2020</span>
-                            </div>
-                            <div class="text-xs text-slate-600 leading-snug mb-2">
-                                NHS mental health accreditation evidence system. Digital upload &amp; assessor review. Featured in RCPsych newsletter.
-                            </div>
-                            <div class="text-[10px] text-violet-600 font-medium">Rails 7 • Kamal 2 • PostgreSQL</div>
-                            <span class="cv-read-more-hover" aria-hidden="true">Read more</span>
-                            <span class="cv-read-more-link">Read more</span>
-                        </div>
-
-                    </div>
-                </div>
             </div>
             
             <!-- Footer -->
-            <div class="cv-print-bar bg-[#0F172A] text-white px-8 py-3 text-center text-xs flex items-center justify-center gap-x-4 rounded-b-3xl">
+            <div class="cv-print-footer flex items-center justify-center gap-x-4 px-8 py-3 text-center text-xs text-slate-500">
                 <div>
-                    <span class="font-medium">BSc Music Technology (2:2)</span> - Birmingham City University
+                    <span class="font-medium text-slate-700">BSc Music Technology (2:2)</span> - Birmingham City University
                 </div>
-                <div class="text-slate-400">•</div>
+                <div class="text-slate-400 print:hidden">•</div>
                 <div>Apple Certified Final Cut Pro (97%)</div>
-                <div class="text-slate-400">•</div>
+                <div class="text-slate-400 print:hidden">•</div>
                 <div>Full UK Clean Driving Licence • Remote-first since 2012</div>
             </div>
             
@@ -1118,30 +662,74 @@
     <section id="cv-print-details" class="cv-print-details" aria-hidden="true"></section>
 
     <!-- Detail modals -->
-    <dialog id="cv-modal" class="cv-modal no-print" aria-labelledby="cv-modal-title" aria-describedby="cv-modal-body">
+    <dialog id="cv-modal" class="no-print m-auto max-h-[calc(100vh-2rem)] w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-0 shadow-2xl backdrop:bg-slate-900/55" aria-labelledby="cv-modal-title" aria-describedby="cv-modal-body">
         <div class="flex items-center justify-between gap-4 border-b border-slate-100 px-6 py-5">
-            <h2 id="cv-modal-title" class="pr-4 min-w-0 flex-1"></h2>
-            <button type="button" id="cv-modal-close" class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors" aria-label="Close">
+            <h2 id="cv-modal-title" class="flex min-w-0 flex-1 items-center pr-4"></h2>
+            <button type="button" id="cv-modal-close" class="shrink-0 rounded-lg p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600" aria-label="Close">
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
         </div>
-        <div id="cv-modal-body" class="cv-modal-body px-6 py-5"></div>
+        <div id="cv-modal-body" class="max-h-[calc(100vh-8rem)] overflow-y-auto px-6 py-5 [&_p+p]:mt-3 [&_ul]:mt-3"></div>
     </dialog>
 
-    <template id="modal-content-profile">
-        <p class="profile-section-head">Profile</p>
-        <div class="profile-objectives">
+    <template id="modal-header-profile">
+        <span class="font-semibold text-slate-900">Profile &amp; Technologies</span>
+    </template>
+    <template id="modal-header-happity" data-logo-includes-name>
+        <span class="flex items-center gap-x-2">
+            <img src="logos/happity.png" alt="Happity" class="cv-logo object-contain">
+            <span class="font-semibold text-slate-900 company-name">Happity</span>
+        </span>
+    </template>
+    <template id="modal-header-black-square-media">
+        <span class="flex items-center gap-x-2">
+            <img src="logos/black-square-media.png" alt="" class="cv-logo object-contain">
+            <span class="font-semibold text-slate-900 company-name">Black Square Media</span>
+        </span>
+    </template>
+    <template id="modal-header-rawnet" data-logo-includes-name>
+        <span class="flex items-center gap-x-2">
+            <img src="https://www.rawnet.com/hubfs/rawnet-logo-2025.svg" alt="Rawnet" class="cv-logo object-contain">
+            <span class="font-semibold text-slate-900 company-name">Rawnet</span>
+        </span>
+    </template>
+    <template id="modal-header-aol">
+        <span class="flex items-center gap-x-2">
+            <img src="logos/aol.png" alt="" class="cv-logo object-contain">
+            <span class="font-semibold text-slate-900">AOL Advertising</span>
+        </span>
+    </template>
+    <template id="modal-header-debatewise">
+        <span class="flex items-center gap-x-2">
+            <img src="logos/debatewise.png" alt="" class="cv-logo object-contain">
+            <span class="font-semibold text-slate-900 company-name">Debatewise</span>
+        </span>
+    </template>
+    <template id="modal-header-rehearse">
+        <span class="font-semibold text-slate-900">Rehearse.app</span>
+    </template>
+    <template id="modal-header-driver-first-assist">
+        <span class="font-semibold text-slate-900">Driver First Assist</span>
+    </template>
+    <template id="modal-header-accredit">
+        <span class="font-semibold text-slate-900">Accredit (AIMS-PICU)</span>
+    </template>
+
+    <template id="modal-content-profile" data-print-order="1">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="mt-0 flex items-center gap-2 text-[0.6875rem] font-semibold uppercase tracking-wider text-slate-600 before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-sky-500 before:content-['']">Profile</p>
+        <div class="mt-2 space-y-2.5">
             <p>Enthusiastic and motivated <strong>team player</strong>.</p>
             <p>Father of four, with a <strong>"can do" attitude</strong> to work and life.</p>
         </div>
-        <p class="profile-section-head">Objectives</p>
-        <div class="profile-objectives">
+        <p class="mt-5 flex items-center gap-2 text-[0.6875rem] font-semibold uppercase tracking-wider text-slate-600 before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-sky-500 before:content-['']">Objectives</p>
+        <div class="mt-2 space-y-2.5">
             <p>Learn skills and technologies to <strong>improve efficiency</strong>, productivity and quality.</p>
             <p>Understand practices and motivations to produce <strong>better solutions</strong>.</p>
             <p>Innovate solutions for old problems to <strong>stay relevant</strong> and competitive.</p>
         </div>
-        <p class="profile-section-head">Key Skills</p>
-        <div class="profile-key-skills">
+        <p class="mt-5 flex items-center gap-2 text-[0.6875rem] font-semibold uppercase tracking-wider text-slate-600 before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-sky-500 before:content-['']">Key Skills</p>
+        <div class="mt-2 space-y-2 rounded-r-lg border-l-2 border-sky-300 bg-slate-50 py-3 pl-4 pr-3.5">
             <p><strong>Mindful design</strong> and development, adhering to web standards.</p>
             <p><strong>Experience</strong> in a range of web and development technologies.</p>
             <p>A <strong>pragmatic, creative</strong> mind that can solve problems.</p>
@@ -1149,91 +737,97 @@
             <p><strong>14+ years</strong> of <strong>remote-first collaboration</strong> (since 2012).</p>
             <p>Proficient <strong>bilingual writer</strong> (British and American English).</p>
         </div>
-        <p class="profile-section-head">Current Technologies (Last 6m)</p>
-        <dl class="modal-tech profile-tech">
-            <div><dt>Ruby</dt><dd>Rails 7 (Happity), Rails 8 (Rehearse.app)</dd></div>
-            <div><dt>Swift</dt><dd>Hotwire Native, SumUp SDK</dd></div>
-            <div><dt>JavaScript</dt><dd>Stimulus, Alpine.js, Turbo</dd></div>
-            <div><dt>Formats</dt><dd>HTML, JSON, YAML</dd></div>
-            <div><dt>CSS</dt><dd>SCSS, Bootstrap, Tailwind CSS</dd></div>
-            <div><dt>SQL</dt><dd>PostgreSQL / SQLite</dd></div>
-            <div><dt>Background jobs</dt><dd>Sidekiq</dd></div>
-            <div><dt>Cache</dt><dd>Redis</dd></div>
-            <div><dt>Analytics</dt><dd>BigQuery</dd></div>
-            <div><dt>Payments</dt><dd>Stripe</dd></div>
-            <div><dt>Testing</dt><dd>RSpec, Capybara</dd></div>
-            <div><dt>AI</dt><dd>Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI</dd></div>
-            <div><dt>Git</dt><dd>GitHub</dd></div>
-            <div><dt>Platform</dt><dd>macOS</dd></div>
-            <div><dt>DevOps</dt><dd>Docker</dd></div>
-            <div><dt>CI</dt><dd>GitHub Actions, Jira (PR workflows)</dd></div>
+        <p class="mt-5 flex items-center gap-2 text-[0.6875rem] font-semibold uppercase tracking-wider text-slate-600 before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-sky-500 before:content-['']">Current Technologies (Last 6m)</p>
+        <dl class="modal-tech mt-2 grid grid-cols-[repeat(auto-fill,minmax(10.5rem,1fr))] gap-x-5 gap-y-2.5 rounded-r-lg border-l-2 border-slate-200 bg-neutral-50 py-3 pl-4 pr-3.5 print:grid-cols-2">
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Ruby</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Rails 7 (Happity), Rails 8 (Rehearse.app)</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Swift</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Hotwire Native, SumUp SDK</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">JavaScript</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Stimulus, Alpine.js, Turbo</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Formats</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">HTML, JSON, YAML</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">CSS</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">SCSS, Bootstrap, Tailwind CSS</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">SQL</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">PostgreSQL / SQLite</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Background jobs</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Sidekiq</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Cache</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Redis</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Analytics</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">BigQuery</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Payments</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Stripe</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Testing</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">RSpec, Capybara</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">AI</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Claude Code (Happity), Cursor (Rehearse), Ollama, CrewAI</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Git</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">GitHub</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Platform</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">macOS</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">DevOps</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Docker</dd></div>
+            <div><dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">CI</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">GitHub Actions, Jira (PR workflows)</dd></div>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-happity">
-        <p class="modal-site-link"><a href="https://happity.co.uk" target="_blank" rel="noopener">happity.co.uk</a></p>
-        <div class="modal-meta">
+    <template id="modal-content-happity" data-print-order="2">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="modal-site-link mb-2 [&_a]:font-medium"><a href="https://happity.co.uk" target="_blank" rel="noopener">happity.co.uk</a></p>
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>2025 - Present</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Senior Software Engineer</span>
         </div>
-        <p class="modal-label">Overview</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
         <p>Happity is a platform connecting parents with baby and toddler classes across the UK, serving both class providers and the families who book them.</p>
-        <p class="modal-subhead">Product delivery</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Product delivery</p>
         <p>Led end-to-end delivery of multiple features on the Ruby on Rails platform, including an embeddable third-party booking widget, a provider onboarding pre-approval system, and a promoted listings advertising product. Overhauled newsletter infrastructure, introduced a BigQuery analytics pipeline, and significantly improved platform performance and observability.</p>
-        <p class="modal-subhead">AI-assisted development</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">AI-assisted development</p>
         <p>Used Claude Code as a daily coding assistant, writing a comprehensive CLAUDE.md codebase guide to give the AI deep context on conventions, architecture, and patterns, significantly improving the quality of AI-generated code.</p>
         <p>Built custom Claude skills for the team that generate Happity-specific prompt templates for starting new tasks, and that automate the merge, conflict resolution, and deployment workflow as well as GitHub Actions workflows to automate Jira status checks on PRs and auto-transition tickets.</p>
-        <p class="modal-subhead">Day to day</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Day to day</p>
         <p>Day-to-day this meant touching everything from database design and background jobs through to frontend interactions and third-party integrations, working closely with a small team to ship features to a tight product roadmap.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</dd>
-            <dt>Tools</dt><dd>Claude Code, GitHub Actions, Jira</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, JavaScript, HTML, CSS, SCSS, SQL, Bash</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Turbo, Stimulus, Alpine.js, Sidekiq, RSpec, Capybara, Stripe, PostgreSQL, Redis, BigQuery</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Tools</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Claude Code, GitHub Actions, Jira</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-black-square-media">
-        <p class="modal-site-link"><a href="https://blacksquaremedia.com" target="_blank" rel="noopener">blacksquaremedia.com</a></p>
-        <div class="modal-meta">
+    <template id="modal-content-black-square-media" data-print-order="3">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="modal-site-link mb-2 [&_a]:font-medium"><a href="https://blacksquaremedia.com" target="_blank" rel="noopener">blacksquaremedia.com</a></p>
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>February 2012 - May 2025</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Senior Software Engineer</span>
         </div>
-        <p class="modal-label">Overview</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
         <p>Black Square Media grew from a team of 4 in 2012 to a team of 7 at its peak. We built and operated services supporting some of the biggest brands in the world including; Target, Nissan, McDonalds, Netflix, Adidas and Expedia.</p>
-        <p class="modal-subhead">Ad platforms</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Ad platforms</p>
         <p>For the majority of my time at Black Square, I was building various ad-support services for two main Clients, Verve Mobile and Infectious Media.</p>
         <p>Both of these companies needed high throughput advertising solutions (built using Go), order management systems (built using Ruby on Rails and AngularJS) and integrations with ad server platforms such as Google Ad Manager (formerly DFP).</p>
-        <p class="modal-subhead">Verve Location Services</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Verve Location Services</p>
         <p>One service I'm particularly proud of is Verve Location Services (VLS), it is at the core of a Verve Mobile's location offering. Originally built in Lua, then rebuilt in Go, VLS is blisteringly fast at taking minimal user and device information, analysing it and calculating the precise location and quality of the request.</p>
         <p>VLS uses data from various sources (DeviceAtlas, OpenStreetMap, MaxMind, NetAcuity etc.) to extract device information, network level accuracy and physical address (even weather). It also acts as a user store, allowing accurate home/work location tracking as well as segmentation and audience matching.</p>
-        <p class="modal-subhead">Reuters.tv video pipeline</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Reuters.tv video pipeline</p>
         <p>I developed a video conversion and packaging pipeline for Reuters.tv (part of Thomson Reuters). To enable them to normalise ads served on their site and inside their apps, and allow the most efficient streaming possible, they required any video ad used to be transcoded to several variants of differing qualities then all packaged into both an MPEG-DASH and an HLS format.</p>
-        <p class="modal-subhead">Nielsen metadata pipeline</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Nielsen metadata pipeline</p>
         <p>We worked for Nielsen on a data ingestion, scoring and fixing pipeline in Go. It took huge CSVs of video and audio metadata from various platforms and apps and, using the GracenoteDB, matched program titles to known data.</p>
         <p>The pipeline improved the accuracy and speed of the system phenomenally, it went from a 10% to an 80% match rate and from one file ingestion taking several hours to just minutes.</p>
-        <p class="modal-subhead">VidMob analytics integration</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">VidMob analytics integration</p>
         <p>Most recently, we worked with VidMob integrating with their Ad partner platforms e.g. Facebook, Snapchat, Reddit, Pinterest, LinkedIn and Google Ad Manager (formerly DFP), to pull in dimension, metric and analytics data from their APIs and transform it and push it into various databases. Primarily this used a combination of Go services Fetch and State and a Platform Handler written in TypeScript, then the pipeline was executed via a Workflow in Databricks.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Python, Go, Ruby, Lua, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, TypeScript, Redis, Couchbase, PostgreSQL, MySQL, ffmpeg</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Vue, jQuery, AngularJS, Bootstrap, RSpec, Ginkgo, Turnip, Databricks</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-rawnet">
-        <p class="modal-site-link"><a href="https://www.rawnet.com" target="_blank" rel="noopener">rawnet.com</a></p>
-        <div class="modal-meta">
+    <template id="modal-content-rawnet" data-print-order="7">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="modal-site-link mb-2 [&_a]:font-medium"><a href="https://www.rawnet.com" target="_blank" rel="noopener">rawnet.com</a></p>
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>April 2010 - February 2012</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Lead Web Developer</span>
         </div>
-        <p class="modal-label">Overview</p>
-        <p class="modal-subhead">Agency context</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Agency context</p>
         <p>Rawnet is an agency, consequently there was great variety in the projects that were commissioned.</p>
         <p>The following is a sample of the longer-running projects where my role was Lead Developer or Co-lead Developer.</p>
-        <p class="modal-subhead">Selected client projects</p>
-        <ul>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Selected client projects</p>
+        <ul class="mt-3 list-disc space-y-1.5 pl-5">
             <li>Britain's Advanced Mainstream (BAM) - A service that shares attitudes and behaviours of tech-users with media industry subscribers</li>
             <li>BBC Insight - The forerunner to BAM; Essentially BAM just for the BBC. (I took this project on and rebuilt it as the multi-tenant app BAM)</li>
             <li>OWL Group (50Connect.co.uk/OlderIsWiser.com) - Multi-tenant Article and Forum based social network for the older generation.</li>
@@ -1245,168 +839,141 @@
             <li>Craster.com - A revamp of a rather drab product site</li>
             <li>CBS Planning Platform - Tree-based profit forecasting tool</li>
         </ul>
-        <p class="modal-subhead">Internal tools and open source</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Internal tools and open source</p>
         <p>In addition to the above projects we developed a lot of internal code that helped generate new apps quickly or build standard CMSs.</p>
         <p>Some of this work was open sourced, but most remains in private repositories or often just supporting sunset products.</p>
-        <ul>
+        <ul class="mt-3 list-disc space-y-1.5 pl-5">
             <li>redis-column gem - stores heavy objects away from tables with a lot of rows</li>
             <li>dynamic-fields gem - automatic migrations for ActiveRecord</li>
             <li>oa-google-and-yahoo gem - OmniAuth for Google and Yahoo</li>
             <li>contact-list gem - Multi-provider contact list via OmniAuth</li>
             <li>Precious Gems - A pseudo-framework for building apps rapidly, initially deployed with OWL Group projects, a modular gem system using my dynamic-fields gem to extend themselves and model functionality, precious-tagging, precious-friendships, etc..</li>
         </ul>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, HTML, HAML, XML, CSS, JavaScript, CoffeeScript, MySQL</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, jQuery, BackboneJS, RSpec, Cucumber, Titanium</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-aol">
-        <p class="modal-site-link"><a href="http://advertising.aol.co.uk/" target="_blank" rel="noopener">advertising.aol.co.uk</a></p>
-        <div class="modal-meta">
+    <template id="modal-content-aol" data-print-order="8">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="modal-site-link mb-2 [&_a]:font-medium"><a href="http://advertising.aol.co.uk/" target="_blank" rel="noopener">advertising.aol.co.uk</a></p>
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>September 2007 - February 2010</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Systems Developer</span>
         </div>
-        <p class="modal-label">Overview</p>
-        <p class="modal-subhead">European innovation team</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">European innovation team</p>
         <p>AOL Advertising (formerly Advertising.com) had one of the largest advertising networks in the world; the business was later sold to Verizon and merged into Yahoo's ad platform. Their operation for the U.S market was maintained by a large team in the U.S, whereas our small four-man team was based in the UK and hired to drive innovation for Europe. We used agile methodologies (SCRUM) to create and iterate on multilingual applications for the entire European business - later these applications and processes would be used as the basis for optimising the U.S team.</p>
-        <p class="modal-subhead">Applications delivered</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Applications delivered</p>
         <p>These applications included; Email based request queuing and creative testing services (decompiling flash files and checking click tags, parsing html and JavaScript page inserts for malware and verifying image file metadata);</p>
         <p>Large scale, client facing, multi-lingual REST based reporting services (both Service and Client);</p>
         <p>Company Sales Dashboard (Service - RoR, Client - Flex) showing graphs/charts.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, Plexigrid (<a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">https://github.com/dim/plexigrid</a>), jQuery, RSpec, Cucumber, TestSpec</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, Actionscript 3 (Flex), HTML, XML, CSS, JavaScript, JSON, MySQL</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Metal, Prawn, RubyNetLdap, RetoI18n, Flex Charting, OpenFlashCharts, Blueprint CSS, Prototype JS, Plexigrid (<a href="https://github.com/dim/plexigrid" target="_blank" rel="noopener">https://github.com/dim/plexigrid</a>), jQuery, RSpec, Cucumber, TestSpec</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-debatewise">
-        <p class="modal-site-link"><a href="https://debatewise.org/" target="_blank" rel="noopener">debatewise.org</a></p>
-        <div class="modal-meta">
+    <template id="modal-content-debatewise" data-print-order="9">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <p class="modal-site-link mb-2 [&_a]:font-medium"><a href="https://debatewise.org/" target="_blank" rel="noopener">debatewise.org</a></p>
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>2006 - September 2007</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Lead Developer - Freelance</span>
         </div>
-        <p class="modal-label">Overview</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
         <p>Debatewise is a website where people discuss topics and formulate a balanced debate.</p>
         <p>I successfully created a basic proof of concept application and was then offered a role architecting and developing the extra, social aspects of the site, as well as designing a more scalable platform.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, HTML, CSS, JavaScript</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Prototype JS, RSpec</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, HTML, CSS, JavaScript</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Prototype JS, RSpec</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-rehearse">
-        <div class="modal-meta">
+    <template id="modal-content-rehearse" data-print-order="5">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>December 2014 - Current</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Solo Dev</span>
         </div>
-        <p class="modal-label">Overview</p>
-        <p class="modal-subhead">Background</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Background</p>
         <p>A side project brought about by a local rehearsal studio not having a booking system, I reached out to the then owner Josh and I started building Rehearse around his needs.</p>
-        <p class="modal-subhead">Rehearse Pay</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Rehearse Pay</p>
         <p>11+ years and 2 owners later, Rehearse is still going strong and now has <a href="https://apps.apple.com/gb/app/rehearse-pay/id1612656608" target="_blank" rel="noopener">Rehearse Pay</a>, an iOS integration for customer in-person payments. It's a hybrid Hotwire Native app that uses the SumUp SDK to take payments and mark sessions as paid.</p>
-        <p class="modal-subhead">Recent upgrades</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Recent upgrades</p>
         <p>In the last six months I upgraded Rehearse to Rails 8 with ongoing feature work; Cursor is my day-to-day coding environment for the project.</p>
-        <p class="modal-subhead">Platform and demo</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Platform and demo</p>
         <p>The main website has built up a lot of features over the years including complex timeslots, restrictions and availability. There's extensive SQL for converting these into a time series for use in the booking grid. An example account is available at <a href="https://test-flight.rehearsal.studio/" target="_blank" rel="noopener">https://test-flight.rehearsal.studio/</a></p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec</dd>
-            <dt>Tools</dt><dd>Cursor</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Swift</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails 8, Hotwire (Turbo, Stimulus), Hotwire Native, SumUp SDK, jQuery, Bootstrap, RSpec</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Tools</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Cursor</dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-driver-first-assist">
-        <div class="modal-meta">
+    <template id="modal-content-driver-first-assist" data-print-order="4">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>Mid 2018 - Current</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Solo Dev</span>
         </div>
-        <p class="modal-label">Overview</p>
-        <p class="modal-subhead">Background</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Background</p>
         <p>Helping a family friend out with his charity which has trained over 1500 people in first aid.</p>
-        <p class="modal-subhead">Application</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Application</p>
         <p>The project consists of a manager which has a section for Trainers to see their upcoming courses and their attendance, and a Members section where they can see their courses and order a toolkit.</p>
-        <p class="modal-subhead">Toolkit ordering</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Toolkit ordering</p>
         <p>Instead of manually ordering a toolkit for each member, the site allows for members to select their size and enter their postal address and it will use Mechanize to automatically log in, select a toolkit size, enter their address and submit the order.</p>
-        <p class="modal-subhead">Documentation</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Documentation</p>
         <p>The customer-facing documentation is something I'm very proud of. I piggybacked the system tests, adding JavaScript helpers and using CSS to highlight areas of the screen, then automatically took screenshots after each successful test, combining these images in markdown. This was then processed into HTML with the generated images being cropped, using imagemagick, so only the highlighted areas are included in the documentation. This all happened post successful test time, so new documentation is available after each feature is added - a public-accessible section can be seen here: <a href="https://secure.driverfirstassist.org/help/clients/courses.html" target="_blank" rel="noopener">https://secure.driverfirstassist.org/help/clients/courses.html</a></p>
         <p>This approach has since been extracted into <a href="https://github.com/ajn/drydoc" target="_blank" rel="noopener">DRYDoc</a> (Don't Repeat Yourself Documentation) gems.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</dd>
-            <dt>Tools</dt><dd><a href="https://github.com/ajn/drydoc" target="_blank" rel="noopener">DRYDoc</a></dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, HTML, HAML, XML, CSS, JavaScript, Redis, PostgreSQL, Render.com</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Hotwire (Turbo, Stimulus), Hotwire Native, jQuery, Bootstrap, RSpec, Mechanize</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Tools</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600"><a href="https://github.com/ajn/drydoc" target="_blank" rel="noopener">DRYDoc</a></dd>
         </dl>
+</div>
     </template>
 
-    <template id="modal-content-accredit">
-        <div class="modal-meta">
+    <template id="modal-content-accredit" data-print-order="6">
+<div class="text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3">
+        <div class="modal-meta mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-snug text-slate-500">
             <span>Mid - Late 2020</span>
-            <span class="modal-meta-sep" aria-hidden="true">·</span>
+            <span class="modal-meta-sep text-slate-300 select-none" aria-hidden="true">·</span>
             <span>Solo Dev</span>
         </div>
-        <p class="modal-label">Overview</p>
-        <p class="modal-subhead">Background</p>
+        <p class="modal-label mt-4 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Overview</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Background</p>
         <p>Helping my wife with her Accreditation for AIMS-PICU, which was an accreditation scheme, working with inpatient mental health services to assure and improve the safety and quality of services and their environments.</p>
-        <p class="modal-subhead">Product</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Product</p>
         <p>At the time there was no way for NHS Mental Health services to collect evidence digitally to submit for accreditation. The idea for the project was to digitise the standards, then to upload evidence for each standard so that Assessors from the Royal College of Psychiatrists (RCPsych) could log in, review and approve the evidence.</p>
-        <p class="modal-subhead">Outcome</p>
+        <p class="modal-subhead mt-4 text-[0.8125rem] font-semibold leading-snug text-slate-700">Outcome</p>
         <p>Unfortunately my wife was driving the project internally and she went on maternity leave halfway through, so while it did help, it never quite got used to its full capacity. It did get a mention in the RCPsych newsletter and a year later when she came back onto the project the RCPsych had built their own version, so I hope it helped in some way. The project, dubbed Accredit, is still up at <a href="https://aimsadmin.app" target="_blank" rel="noopener">https://aimsadmin.app</a> with a demo organisation (please ask for demo access), recently updated to Rails 7 and deployed with Kamal 2.</p>
-        <dl class="modal-tech">
-            <dt>Technologies/Languages</dt><dd>Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</dd>
-            <dt>Frameworks/Libraries</dt><dd>Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</dd>
+        <dl class="modal-tech mt-4 space-y-0">
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Technologies/Languages</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby, HTML, CSS, JavaScript, PostgreSQL, Kamal 2</dd>
+            <dt class="mt-2.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-500">Frameworks/Libraries</dt><dd class="mt-1 text-[0.8125rem] leading-normal text-slate-600">Ruby on Rails, Hotwire (Turbo, Stimulus), Bootstrap, RSpec, Kamal 2</dd>
         </dl>
+</div>
     </template>
     
     <script>
-        const modalHeaders = {
-            'profile': '<span class="font-semibold text-slate-900">Profile &amp; Technologies</span>',
-            'happity': `
-                <span class="flex items-center gap-x-2 logo-includes-name">
-                    <img src="logos/happity.png" alt="Happity" class="cv-logo object-contain">
-                    <span class="font-semibold text-slate-900 company-name">Happity</span>
-                </span>`,
-            'black-square-media': `
-                <span class="flex items-center gap-x-2">
-                    <img src="logos/black-square-media.png" alt="" class="cv-logo object-contain">
-                    <span class="font-semibold text-slate-900 company-name">Black Square Media</span>
-                </span>`,
-            'rawnet': `
-                <span class="flex items-center gap-x-2 logo-includes-name">
-                    <img src="https://www.rawnet.com/hubfs/rawnet-logo-2025.svg" alt="Rawnet" class="cv-logo object-contain">
-                    <span class="font-semibold text-slate-900 company-name">Rawnet</span>
-                </span>`,
-            'aol': `
-                <span class="flex items-center gap-x-2">
-                    <img src="logos/aol.png" alt="" class="cv-logo object-contain">
-                    <span class="font-semibold text-slate-900">AOL Advertising</span>
-                </span>`,
-            'debatewise': `
-                <span class="flex items-center gap-x-2">
-                    <img src="logos/debatewise.png" alt="" class="cv-logo object-contain">
-                    <span class="font-semibold text-slate-900 company-name">Debatewise</span>
-                </span>`,
-            'rehearse': '<span class="font-semibold text-slate-900">Rehearse.app</span>',
-            'driver-first-assist': '<span class="font-semibold text-slate-900">Driver First Assist</span>',
-            'accredit': '<span class="font-semibold text-slate-900">Accredit (AIMS-PICU)</span>'
-        };
+        const MODAL_TITLE_CLASS = 'flex min-w-0 flex-1 items-center pr-4';
+        const PRINT_HEAD_CLASS = 'cv-print-section-head flex items-center gap-3.5 pb-3 mb-4 before:h-4 before:w-1 before:shrink-0 before:rounded-sm before:bg-sky-500 before:content-[\'\']';
+        const PRINT_BODY_CLASS = 'max-h-none overflow-visible px-6 py-5 text-[0.8125rem] leading-relaxed text-slate-600 [&_a]:text-sky-600 [&_a]:underline [&_p+p]:mt-3 [&_ul]:mt-3 cv-print-section-body';
 
-        const modalHeaderAccessibleNames = {
-            'profile': 'Profile & Technologies',
-            'happity': 'Happity',
-            'black-square-media': 'Black Square Media',
-            'rawnet': 'Rawnet',
-            'aol': 'AOL Advertising',
-            'debatewise': 'Debatewise',
-            'rehearse': 'Rehearse.app',
-            'driver-first-assist': 'Driver First Assist',
-            'accredit': 'Accredit (AIMS-PICU)'
-        };
-
-        const logoIncludesNameModals = new Set(['happity', 'rawnet']);
+        const printModalIds = [...document.querySelectorAll('template[id^="modal-content-"]')]
+            .sort((a, b) => +a.dataset.printOrder - +b.dataset.printOrder)
+            .map((t) => t.id.replace('modal-content-', ''));
 
         const cvModal = document.getElementById('cv-modal');
         const cvModalBody = document.getElementById('cv-modal-body');
@@ -1414,20 +981,23 @@
         const cvModalClose = document.getElementById('cv-modal-close');
         let cvModalTrigger = null;
 
+        function mountModalHeader(parent, id, baseClass) {
+            const tpl = document.getElementById('modal-header-' + id);
+            parent.replaceChildren();
+            parent.className = baseClass + (tpl?.hasAttribute('data-logo-includes-name') ? ' logo-includes-name' : '');
+            if (tpl) {
+                parent.appendChild(tpl.content.cloneNode(true));
+            } else {
+                parent.textContent = id;
+            }
+        }
+
         function openCvModal(id, trigger) {
             const template = document.getElementById('modal-content-' + id);
             if (!template || !cvModal) return;
 
             cvModalTrigger = trigger || document.activeElement;
-
-            const headerHtml = modalHeaders[id];
-            if (headerHtml) {
-                cvModalTitle.innerHTML = headerHtml;
-                cvModalTitle.className = 'pr-4 min-w-0 flex-1' + (logoIncludesNameModals.has(id) ? ' logo-includes-name' : '');
-            } else {
-                cvModalTitle.textContent = modalHeaderAccessibleNames[id] || id;
-                cvModalTitle.className = 'pr-4 min-w-0 flex-1';
-            }
+            mountModalHeader(cvModalTitle, id, MODAL_TITLE_CLASS);
             cvModalBody.innerHTML = template.innerHTML;
             cvModal.showModal();
             cvModalClose?.focus();
@@ -1436,127 +1006,53 @@
         function closeCvModal() {
             if (!cvModal?.open) return;
             cvModal.close();
-            if (cvModalTrigger && typeof cvModalTrigger.focus === 'function') {
-                cvModalTrigger.focus();
-            }
+            cvModalTrigger?.focus?.();
             cvModalTrigger = null;
         }
 
-        document.querySelectorAll('.cv-detail-trigger').forEach((trigger) => {
-            trigger.addEventListener('click', () => openCvModal(trigger.dataset.modal, trigger));
-            trigger.addEventListener('keydown', (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    openCvModal(trigger.dataset.modal, trigger);
-                }
-            });
+        document.addEventListener('click', (event) => {
+            const trigger = event.target.closest('.cv-detail-trigger');
+            if (trigger) openCvModal(trigger.dataset.modal, trigger);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            const trigger = event.target.closest('.cv-detail-trigger');
+            if (trigger && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                openCvModal(trigger.dataset.modal, trigger);
+            }
         });
 
         cvModalClose?.addEventListener('click', closeCvModal);
-
         cvModal?.addEventListener('click', (event) => {
             if (event.target === cvModal) closeCvModal();
         });
-
         cvModal?.addEventListener('cancel', (event) => {
             event.preventDefault();
             closeCvModal();
         });
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') closeCvModal();
-        });
-
-        function printCV() {
-            window.print();
-        }
-
-        const printModalOrder = [
-            'profile',
-            'happity',
-            'black-square-media',
-            'driver-first-assist',
-            'rehearse',
-            'accredit',
-            'rawnet',
-            'aol',
-            'debatewise'
-        ];
-
         const A4_PRINTABLE_PX = 980;
         const PRINT_ZOOM_SNAP = [0.90, 0.87, 0.84, 0.81, 0.78];
         const PRINT_ZOOM_MIN = 0.78;
 
-        function withPrintDetailsMeasurable(callback) {
-            const container = document.getElementById('cv-print-details');
-            if (!container) return;
-
-            const sections = container.querySelectorAll('.cv-print-section');
-            if (!sections.length) return;
-
-            const saved = {
-                position: container.style.position,
-                left: container.style.left,
-                top: container.style.top,
-                width: container.style.width,
-                visibility: container.style.visibility,
-                zIndex: container.style.zIndex,
-                pointerEvents: container.style.pointerEvents,
-                zoom: container.style.zoom
-            };
-
-            container.style.position = 'fixed';
-            container.style.left = '0';
-            container.style.top = '0';
-            container.style.width = '210mm';
-            container.style.visibility = 'hidden';
-            container.style.zIndex = '-1';
-            container.style.pointerEvents = 'none';
-
-            callback(sections, container);
-
-            container.style.position = saved.position;
-            container.style.left = saved.left;
-            container.style.top = saved.top;
-            container.style.width = saved.width;
-            container.style.visibility = saved.visibility;
-            container.style.zIndex = saved.zIndex;
-            container.style.pointerEvents = saved.pointerEvents;
-            container.style.zoom = saved.zoom;
-        }
-
-        function computeUniformPrintZoom(container, sections) {
-            container.style.zoom = '1';
-
+        function computeUniformPrintZoom(sections) {
             let maxHeight = 0;
             sections.forEach((section) => {
                 maxHeight = Math.max(maxHeight, section.offsetHeight);
             });
-
             for (const step of PRINT_ZOOM_SNAP) {
                 if (maxHeight * step <= A4_PRINTABLE_PX) return step;
             }
-
             return PRINT_ZOOM_MIN;
         }
 
-        function applyPrintZoom(zoom, container) {
-            document.documentElement.style.setProperty('--print-zoom', String(zoom));
-            if (container) {
-                container.style.zoom = String(zoom);
-            }
-        }
-
         function layoutPrintPageBreaks(sections) {
-            sections.forEach((section) => {
-                section.classList.remove('cv-print-section--new-page');
-            });
+            sections.forEach((section) => section.classList.remove('cv-print-section--new-page'));
 
             let remainingOnPage = A4_PRINTABLE_PX;
-
             sections.forEach((section, index) => {
                 const height = section.getBoundingClientRect().height;
-
                 if (index > 0 && height > remainingOnPage) {
                     section.classList.add('cv-print-section--new-page');
                     remainingOnPage = A4_PRINTABLE_PX - height;
@@ -1567,22 +1063,27 @@
         }
 
         function preparePrintLayout() {
-            withPrintDetailsMeasurable((sections, container) => {
-                const zoom = computeUniformPrintZoom(container, sections);
-                applyPrintZoom(zoom, container);
-                layoutPrintPageBreaks(sections);
-            });
-        }
+            const container = document.getElementById('cv-print-details');
+            const sections = container?.querySelectorAll('.cv-print-section');
+            if (!sections?.length) return;
 
-        function schedulePrintLayout() {
-            requestAnimationFrame(preparePrintLayout);
+            container.classList.add('cv-print-details--measure');
+            container.style.zoom = '1';
+
+            const zoom = computeUniformPrintZoom(sections);
+            document.documentElement.style.setProperty('--print-zoom', String(zoom));
+            container.style.zoom = String(zoom);
+
+            layoutPrintPageBreaks(sections);
+            container.classList.remove('cv-print-details--measure');
+            container.style.zoom = '';
         }
 
         function buildPrintDetails() {
             const container = document.getElementById('cv-print-details');
             if (!container) return;
 
-            printModalOrder.forEach((id) => {
+            printModalIds.forEach((id) => {
                 const template = document.getElementById('modal-content-' + id);
                 if (!template) return;
 
@@ -1591,36 +1092,26 @@
                 article.dataset.modal = id;
 
                 const header = document.createElement('header');
-                header.className = 'cv-print-section-head' + (logoIncludesNameModals.has(id) ? ' logo-includes-name' : '');
-
-                const headerHtml = modalHeaders[id];
-                if (headerHtml) {
-                    header.innerHTML = headerHtml;
-                } else {
-                    header.textContent = modalHeaderAccessibleNames[id] || id;
-                }
+                mountModalHeader(header, id, PRINT_HEAD_CLASS);
 
                 const body = document.createElement('div');
-                body.className = 'cv-modal-body cv-print-section-body px-6 py-5';
+                body.className = PRINT_BODY_CLASS;
                 body.innerHTML = template.innerHTML;
 
-                article.appendChild(header);
-                article.appendChild(body);
+                article.append(header, body);
                 container.appendChild(article);
             });
-
-            preparePrintLayout();
-            schedulePrintLayout();
         }
 
-        buildPrintDetails();
-        if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(schedulePrintLayout);
+        function initPrint() {
+            buildPrintDetails();
+            (document.fonts?.ready ?? Promise.resolve()).then(() =>
+                requestAnimationFrame(preparePrintLayout)
+            );
         }
-        window.addEventListener('load', schedulePrintLayout);
+
+        initPrint();
         window.addEventListener('beforeprint', preparePrintLayout);
-        
-        console.log('%c[CV] Press Ctrl/Cmd + P to print or save as PDF', 'color:#64748b');
     </script>
 </body>
 </html>
