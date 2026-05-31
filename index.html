@@ -39,11 +39,6 @@
                         0 1px 2px rgba(15, 23, 42, 0.04);
         }
 
-        .premium-badge {
-            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.15),
-                        inset 0 1px 0 rgba(255,255,255,0.3);
-        }
-
         .mini-pill {
             font-size: 0.65rem;
             padding: 1px 6px;
@@ -77,7 +72,16 @@
         .key-clients img {
             height: 2rem;
             border-radius: 0.5rem;
+        }
+
+        .key-clients img[alt="McDonald's"],
+        .key-clients img[alt="Adidas"] {
             background-color: white;
+        }
+
+        .key-clients img[alt="Netflix"],
+        .key-clients img[alt="Craster"] {
+            background-color: #000;
         }
 
         .key-clients img[alt="LoveThis"] {
@@ -218,12 +222,6 @@
             font-size: 1.75rem;
             line-height: 1.2;
             letter-spacing: -0.02em;
-        }
-
-        #cv-modal-title .premium-badge {
-            font-size: 0.875rem;
-            padding: 0.35rem 0.875rem;
-            border-radius: 0.5rem;
         }
 
         #cv-modal-title.logo-includes-name .company-name {
@@ -494,12 +492,6 @@
             display: none;
         }
 
-        .cv-print-section-head .premium-badge {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.625rem;
-            border-radius: 0.375rem;
-        }
-
         .cv-print-section-body {
             max-height: none;
             overflow: visible;
@@ -683,6 +675,17 @@
                 box-shadow: none !important;
             }
 
+            .cv-print-front .tech-pill,
+            .cv-print-front .key-clients img,
+            .cv-print-front .mini-pill {
+                box-shadow: none !important;
+            }
+
+            .cv-print-front .tech-pill {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
             .cv-print-front .sm\:hidden {
                 display: none !important;
             }
@@ -802,7 +805,7 @@
                              class="w-16 h-16 shrink-0 rounded-2xl object-cover border-[2.5px] border-white/20 shadow-lg ring-1 ring-white/10">
                         <div class="text-sm leading-tight min-w-0">
                             <div class="flex items-center gap-x-2 text-slate-300">
-                                <i class="fa-solid fa-map-marker-alt"></i>
+                                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Kettering, UK</span>
                             </div>
                             <div class="mt-1">
@@ -828,7 +831,7 @@
 
                 <div class="hidden sm:block text-sm shrink-0 text-right">
                     <div class="flex items-center justify-end gap-x-2 text-slate-300">
-                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
                         <span>Kettering, UK</span>
                     </div>
                     <div class="mt-1 flex items-center justify-end gap-x-2">
@@ -927,7 +930,7 @@
                             <div class="mb-7 cv-detail-trigger group" data-modal="black-square-media" tabindex="0" role="button" aria-label="View full Black Square Media details">
                                 <div class="experience-header">
                                     <div class="flex items-center gap-x-2">
-                                        <img src="logos/black-square-media.png" alt="Black Square Media" class="cv-logo h-5 object-contain">
+                                        <img src="logos/black-square-media.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900 company-name">Black Square Media</span>
                                     </div>
                                     <div class="text-xs text-slate-500">Senior Software Engineer (13 years) - 2012 - 2025</div>
@@ -993,7 +996,7 @@
                             <div class="mb-7 cv-detail-trigger group" data-modal="aol" tabindex="0" role="button" aria-label="View full AOL Advertising details">
                                 <div class="experience-header">
                                     <div class="flex items-center gap-x-2">
-                                        <span class="premium-badge inline-flex items-center justify-center bg-[#22C55E] text-white text-[10px] font-bold tracking-widest px-3 py-[1px] rounded-md">AOL</span>
+                                        <img src="logos/aol.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900">AOL Advertising</span>
                                     </div>
                                     <div class="text-xs text-slate-500">Systems Developer - 2007 - 2010</div>
@@ -1013,7 +1016,7 @@
                             <div class="cv-detail-trigger group" data-modal="debatewise" tabindex="0" role="button" aria-label="View full Debatewise details">
                                 <div class="experience-header">
                                     <div class="flex items-center gap-x-2">
-                                        <img src="logos/debatewise.png" alt="Debatewise" class="cv-logo h-5 object-contain">
+                                        <img src="logos/debatewise.png" alt="" class="cv-logo h-5 object-contain">
                                         <span class="font-semibold text-slate-900 company-name">Debatewise</span>
                                     </div>
                                     <div class="text-xs text-slate-500">Lead Developer - Freelance - 2006 - 2007</div>
@@ -1119,7 +1122,7 @@
         <div class="flex items-center justify-between gap-4 border-b border-slate-100 px-6 py-5">
             <h2 id="cv-modal-title" class="pr-4 min-w-0 flex-1"></h2>
             <button type="button" id="cv-modal-close" class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors" aria-label="Close">
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
         </div>
         <div id="cv-modal-body" class="cv-modal-body px-6 py-5"></div>
@@ -1368,7 +1371,7 @@
                 </span>`,
             'black-square-media': `
                 <span class="flex items-center gap-x-2">
-                    <img src="logos/black-square-media.png" alt="Black Square Media" class="cv-logo object-contain">
+                    <img src="logos/black-square-media.png" alt="" class="cv-logo object-contain">
                     <span class="font-semibold text-slate-900 company-name">Black Square Media</span>
                 </span>`,
             'rawnet': `
@@ -1378,12 +1381,12 @@
                 </span>`,
             'aol': `
                 <span class="flex items-center gap-x-2">
-                    <span class="premium-badge inline-flex items-center justify-center bg-[#22C55E] text-white text-[10px] font-bold tracking-widest px-3 py-[1px] rounded-md">AOL</span>
+                    <img src="logos/aol.png" alt="" class="cv-logo object-contain">
                     <span class="font-semibold text-slate-900">AOL Advertising</span>
                 </span>`,
             'debatewise': `
                 <span class="flex items-center gap-x-2">
-                    <img src="logos/debatewise.png" alt="Debatewise" class="cv-logo object-contain">
+                    <img src="logos/debatewise.png" alt="" class="cv-logo object-contain">
                     <span class="font-semibold text-slate-900 company-name">Debatewise</span>
                 </span>`,
             'rehearse': '<span class="font-semibold text-slate-900">Rehearse.app</span>',
@@ -1403,6 +1406,8 @@
             'accredit': 'Accredit (AIMS-PICU)'
         };
 
+        const logoIncludesNameModals = new Set(['happity', 'rawnet']);
+
         const cvModal = document.getElementById('cv-modal');
         const cvModalBody = document.getElementById('cv-modal-body');
         const cvModalTitle = document.getElementById('cv-modal-title');
@@ -1418,7 +1423,7 @@
             const headerHtml = modalHeaders[id];
             if (headerHtml) {
                 cvModalTitle.innerHTML = headerHtml;
-                cvModalTitle.className = 'pr-4 min-w-0 flex-1' + (id === 'happity' || id === 'rawnet' ? ' logo-includes-name' : '');
+                cvModalTitle.className = 'pr-4 min-w-0 flex-1' + (logoIncludesNameModals.has(id) ? ' logo-includes-name' : '');
             } else {
                 cvModalTitle.textContent = modalHeaderAccessibleNames[id] || id;
                 cvModalTitle.className = 'pr-4 min-w-0 flex-1';
@@ -1586,7 +1591,7 @@
                 article.dataset.modal = id;
 
                 const header = document.createElement('header');
-                header.className = 'cv-print-section-head' + (id === 'happity' || id === 'rawnet' ? ' logo-includes-name' : '');
+                header.className = 'cv-print-section-head' + (logoIncludesNameModals.has(id) ? ' logo-includes-name' : '');
 
                 const headerHtml = modalHeaders[id];
                 if (headerHtml) {
